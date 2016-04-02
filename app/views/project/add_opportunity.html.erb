@@ -1,0 +1,285 @@
+<%= content_for :header do %>
+	List Opportunity - Add Opportunity
+<% end %>
+<%= content_for :Listheader do %>
+	<li><a href="list_opportunity">List Opportunity</a></li>
+	<li class="active">Add Opportunity</li>
+<% end %>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="my-heading">Opportunity</div>
+	</div>
+	<%= form_tag({:controller => "project", :action => "list_opportunity"}, :class=> "form-horizontal form-validate-jquery" )do %>
+		<div class="panel-body">
+			<div class="form-group">
+				<div class="row">
+					<div class="col-lg-7 col-md-7">
+						<label> Client  </label>
+						<select data-placeholder = "Select Client" class="select-search" required = true>
+	                        <option>
+		                        <optgroup>
+			                        <option value="opt2">Nikhil Patel</option>
+			                        <option value="opt3">Infosys</option>
+			                        <option value="opt4">Streebo solutions</option>
+			                        <option value="opt5">NetSqure Pvt ltd.</option>
+			                        <option value="opt6">USA Gov</option>
+		                        </optgroup>
+	                        </option>
+	                    </select>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-lg-7 col-md-7">
+						<label> Opportunity Name  </label>
+						<%= text_field_tag 'opp_name' , nil , class: "form-control" , :required => true %>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-lg-7 col-md-7">
+						<label> Details  </label>
+						<%= text_area_tag 'opp_details' , nil , class: "form-control" , :required => true%>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-lg-12 col-md-12">
+						<label> Expacted Value  </label>
+						<div class="row">
+							<div class="col-lg-2 col-md-2">
+			                        <%= text_field_tag '' , nil , class: "form-control",  value: "INR - Rs" , :disabled => true%>
+			                </div>
+			                <div class="col-lg-2 col-md-2">
+			                    <%= text_field_tag 'exp_value' , nil , class: "form-control",  placeholder: "Value" , :required => true %>
+			                </div>
+			                <div class="col-lg-2 col-md-2">
+			                    <select class="select" id="price_format">
+			                    	<option value="fixed">fixed</option>
+			                    	<option value="per_hour">per hour</option>
+			                    	<option value="per_day">per day</option>
+			                    	<option value="per_month">per month</option>
+			                    	<option value="per_year">per year</option>
+			                    </select>
+			                </div>
+			                <div class="col-lg-2 col-md-2" style="display:none" id="per_hour_text">
+			                	<div class="row">
+			                		<div class="col-lg-2 col-md-2">
+			                			for
+			                		</div>
+			                		<div class="col-lg-8 col-md-8">
+			                     		<%= text_field_tag 'hour' , nil , class: "form-control",  placeholder: "Value" %>
+			                     	</div>
+			                     	<div class="col-lg-2 col-md-2">
+			                     		hour
+			                     	</div>
+			                    </div>
+			                </div>
+			                <div class="col-lg-2 col-md-2" style="display:none" id="per_day_text">
+			                	<div class="row">
+			                		<div class="col-lg-2 col-md-2">
+			                			for
+			                		</div>
+			                		<div class="col-lg-8 col-md-8">
+			                     		<%= text_field_tag 'day' , nil , class: "form-control",  placeholder: "Value" %>
+			                     	</div>
+			                     	<div class="col-lg-2 col-md-2">
+			                     		day
+			                     	</div>
+			                    </div>
+			                </div>
+			                <div class="col-lg-2 col-md-2" style="display:none" id="per_month_text">
+			                	<div class="row">
+			                		<div class="col-lg-2 col-md-2">
+			                			for
+			                		</div>
+			                		<div class="col-lg-8 col-md-8">
+			                     		<%= text_field_tag 'month' , nil , class: "form-control",  placeholder: "Value" %>
+			                     	</div>
+			                     	<div class="col-lg-2 col-md-2">
+			                     		month
+			                     	</div>
+			                    </div>
+			                </div>
+			                <div class="col-lg-2 col-md-2" style="display:none" id="per_year_text">
+			                	<div class="row">
+			                		<div class="col-lg-2 col-md-2">
+			                			for
+			                		</div>
+			                		<div class="col-lg-8 col-md-8">
+			                     		<%= text_field_tag 'year' , nil , class: "form-control",  placeholder: "Value" %>
+			                     	</div>
+			                     	<div class="col-lg-2 col-md-2">
+			                     		year
+			                     	</div>
+			                    </div>
+			                </div>
+
+			                
+			            </div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-lg-2 col-md-2">
+						<label>Milestone </label>
+	                    <select data-placeholder = "Select Milestone" class="select" required = true id="milestone">
+	                    	<option>
+	                    		<optgroup>
+			                    	<option value="new">New</option>
+			                    	<option value="analysis">Analysis</option>
+			                    	<option value="desinging">Desinging</option>
+			                    	<option value="negotiation">Negotiation</option>
+			                    	<option value="bid">Bid</option>
+			                    	<option value="lost">Lost</option>
+			                    	<option value="won">Won</option>
+		                    	</optgroup>
+	                    	</option>
+	                    </select>
+	                </div>
+	                <div class="col-lg-3 col-md-3">
+	                	<label> Probability of Winning(%) </label>
+	             		<%= text_field_tag 'prob_win' , nil , id:"milestone_per", class: "form-control" , :disabled => true%>
+	                </div>
+
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-lg-7 col-md-7">
+						<label> Expacted Colse Date  </label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="icon-calendar5"></i></span>
+							<%= text_field_tag 'close_date' , nil , class: "form-control pickadate" , :required => true %>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-lg-7 col-md-7">
+						<label> Track </label>
+						<select data-placeholder = "Select Track" class="select" required = true>
+							<option>
+								<optgroup>
+			                    	<option value="select">Select</option>
+			                    	<option value="new">BMS</option>
+			                    	<option value="analysis">Hospital Management</option>
+			                    	<option value="desinging">Mobi print</option>
+			                    	<option value="negotiation">PGP</option>
+		                    	</optgroup>
+	                    	</option>
+	                    </select>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-lg-7 col-md-7">
+						<label> Assigned To </label>
+						<select data-placeholder="Select Employee" class="select" required = true>
+	                    	<option>
+	                    		<optgroup>
+			                    	<option value="new">Karan Vyas</option>
+			                    	<option value="analysis">Krishna Mehta</option>
+			                    	<option value="desinging">Mayur Shah</option>
+			                    	<option value="negotiation">Sanjay Vizuda</option>
+			                    </optgroup>
+	                    	</option>
+	                    </select>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-lg-7 col-md-7">
+						<div>
+							<%= submit_tag 'Save', class: 'btn btn-primary' %>
+							<%= link_to 'Cancel' , list_opportunity_path , class: 'btn btn-link' %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>
+<script type="text/javascript">
+	$("#price_format").on('change', function(){
+		if(this.value == "per_hour")
+		{
+			$('#per_hour_text').show();
+			$('#per_day_text').hide();
+			$('#per_month_text').hide();
+			$('#per_year_text').hide();
+		}
+		else if(this.value == "per_day")
+		{
+			$('#per_day_text').show();
+			$('#per_hour_text').hide();
+			$('#per_month_text').hide();
+			$('#per_year_text').hide();
+		}
+		else if(this.value == "per_month")
+		{
+			$('#per_month_text').show();
+			$('#per_hour_text').hide();
+			$('#per_day_text').hide();
+			$('#per_year_text').hide();
+		}
+		else if(this.value == "per_year")
+		{
+			$('#per_year_text').show();
+			$('#per_hour_text').hide();
+			$('#per_day_text').hide();
+			$('#per_month_text').hide();
+		}
+		else if(this.value == "fixed")
+		{
+			$('#per_hour_text').hide();
+			$('#per_day_text').hide();
+			$('#per_month_text').hide();
+			$('#per_year_text').hide();
+		}
+	});
+
+	$("#milestone").on('change', function(){
+		if(this.value == "new")
+		{
+			document.getElementById("milestone_per").value = "10%";
+		}
+		else if(this.value == "analysis")
+		{
+			document.getElementById("milestone_per").value = "25%";
+		}
+		else if(this.value == "desinging")
+		{
+			document.getElementById("milestone_per").value = "50%";
+		}
+		else if(this.value == "negotiation")
+		{
+			document.getElementById("milestone_per").value = "80%";
+		}
+		else if(this.value == "bid")
+		{
+			document.getElementById("milestone_per").value = "70%";
+		}
+		else if(this.value == "lost")
+		{
+			document.getElementById("milestone_per").value = "0%";
+		}
+		else if(this.value == "won")
+		{
+			document.getElementById("milestone_per").value = "100%";
+		}
+		else
+		{
+			document.getElementById("milestone_per").value = " ";
+		}
+	});
+</script>
+	

@@ -1,0 +1,90 @@
+<%= link_to '' , "#modal_form_vertical" , class: "icon-plus2 pull-right" , "data-toggle" => "modal" %>
+<div id="modal_form_vertical" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+		   <div class="modal-header">
+	        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+	        	<h5 class="modal-title">Vertical form</h5>
+	       </div>
+
+			<form action="/new_people">
+				<div class="modal-body">
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-6">
+								<label>First name</label>
+								<input type="t/new_peopleext" placeholder="First Name" class="form-control">
+							</div>
+							<div class="col-sm-6">
+								<label>Last name</label>
+								<input type="text" placeholder="Last Name" class="form-control">
+							</div>
+						</div>
+					</div>
+				
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Default select</label>
+								<select data-placeholder="Select a Company" class="select">
+									<option></option>
+									<optgroup label="Company">
+										<option value="">Complitech Solution Private Limited</option>
+										<option value="">Cspl</option>
+										<option value="">Complitech</option>
+										<option value="">Complitech.net</option>
+									</optgroup>
+								</select>
+							</div>
+							<div class="col-sm-6">
+								<label>Address line 2</label>
+								<input type="text" placeholder="Address Line 2" class="form-control">
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-4">
+								<label>City</label>
+								<input type="text" placeholder="City" class="form-control">
+							</div>
+
+							<div class="col-sm-4">
+								<label>State/Province</label>
+								<input type="text" placeholder="State" class="form-control">
+							</div>
+
+							<div class="col-sm-4">
+								<label>ZIP code</label>
+								<input type="text" placeholder="Zip Code" class="form-control">
+							</div>
+						</div>
+					</div>
+				
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Email</label>
+								<input type="text" placeholder="Email" class="form-control">
+								<span class="help-block">name@domain.com</span>
+							</div>
+
+							<div class="col-sm-6">
+								<label>Phone #</label>
+								<input type="text" placeholder="Phone" data-mask="+99-99-9999-9999" class="form-control">
+								<span class="help-block">+99-99-9999-9999</span>
+							</div>
+						</div>
+					</div>
+				
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Submit form</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

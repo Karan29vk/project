@@ -1,0 +1,44 @@
+<%= content_for :header do %>
+	Setting - List Category - Add Category
+<% end %>
+<%= content_for :Listheader do %>
+	<li>Setting</li>
+	<li>List Category</li>
+	<li class="active">Add Category</li>
+<% end %>
+<div class="row">
+	<div class="col-lg-3 col-md-3">
+		<%= render 'all_setting' %>
+	</div>
+	<div class="col-lg-9 col-md-9">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<span class="my-heading">Task Category</span>
+				<%= link_to ' ' , list_task_category_path , class: "glyphicon glyphicon-arrow-left pull-right" %>
+			</div>
+			<div class="panel-body">
+				<%= form_tag({:controller => "project", :action => "list_task_category"}, :class=> "form-horizontal form-validate-jquery" )do %>
+					<fieldset>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-lg-8 col-md-8">
+									<label>Category Name </label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-8 col-md-8">
+									<%= text_field_tag 'name' , nil , class: "form-control" , :placeholder => "Like : Call , Meeting (etc)..." , required: true %>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					<div class="row">
+						<div class="col-lg-8 col-md-8">
+							<%= submit_tag 'Add Category' , class: "btn btn-primary" %>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

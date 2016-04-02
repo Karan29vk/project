@@ -1,0 +1,60 @@
+<%= content_for :header do %>
+	Setting - List Priority
+<% end %>
+<%= content_for :Listheader do %>
+	<li>Setting</li>
+	<li class="active">List Priority</li>
+<% end %>
+<div class="row">
+	<div class="col-lg-3">
+		<%= render 'all_setting' %>
+	</div>
+	<div class="col-lg-9">
+		<div class="panel panel-flat">
+			<div class="panel-heading">
+				<span class="my-heading">Priority List</span>
+				<%= link_to 'Add Priority' , add_priority_path , class: "btn btn-primary pull-right"%>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<th>Name</th>
+								<th>Edit</th>
+								<th>Delete</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Higher</td>
+									<td><%= link_to '' , add_priority_path , class: "glyphicon glyphicon-pencil" %></td>
+									<td><%= link_to '' , add_priority_path , class: "icon-cross" %></td>
+								</tr>
+								<tr>
+									<td>High</td>
+									<td><%= link_to '' , add_priority_path , class: "glyphicon glyphicon-pencil" %></td>
+									<td><%= link_to '' , add_priority_path , class: "icon-cross" %></td>
+								</tr>
+								<tr>
+									<td>Middum</td>
+									<td><%= link_to '' , add_priority_path , class: "glyphicon glyphicon-pencil" %></td>
+									<td><%= link_to '' , add_priority_path , class: "icon-cross" %></td>
+								</tr>
+								<tr>
+									<td>Low</td>
+									<td><%= link_to '' , add_priority_path , class: "glyphicon glyphicon-pencil" %></td>
+									<td><%= link_to '' , add_priority_path , class: "icon-cross" %></td>
+								</tr>
+								<tr>
+									<td>Lowest</td>
+									<td><%= link_to '' , add_priority_path , class: "glyphicon glyphicon-pencil" %></td>
+									<td><%= link_to '' , add_priority_path , class: "icon-cross" %></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

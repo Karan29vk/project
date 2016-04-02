@@ -1,0 +1,191 @@
+<%= content_for :header do %>
+	People &amp; Organization - List Person - Add Person
+<% end %>
+<%= content_for :Listheader do %>
+	<li><a href="#">People &amp; Organization</a></li>
+	<li><a href="list_person">List Person</a></li>
+	<li class="active">Add Person</li>
+<% end %>
+<div class="panel panel-flat">
+	<div class="panel-heading">
+		<h5 class="panel-title">New Person</h5>
+		<div class="heading-elements">
+			<ul class="icons-list">
+        		<li><a data-action="collapse"></a></li>
+        		<li><a data-action="reload"></a></li>
+        		<li><a data-action="close"></a></li>
+        	</ul>
+    	</div>
+		<a class="heading-elements-toggle">
+			<i class="icon-menu"></i>
+		</a>
+	</div>
+	<%= form_tag({:controller => "project", :action => "add_person"}, :class=> "form-horizontal form-validate-jquery" )do %>
+		<div class="panel-body">
+			<fieldset>
+				<legend class="text-semibold">
+					<i class="icon-file-text2 position-left"></i>
+					Enter information
+					<a data-target="#demo1" data-toggle="collapse" class="control-arrow collapsed" aria-expanded="false">
+						<i class="icon-circle-down2"></i>
+					</a>
+				</legend>
+
+				
+				<div id="demo1" class="collapse in" aria-expanded="true" style="">
+					<div class="form-group">
+						<div class="row">
+							<div class="col-lg-2">
+								<label> Title </label>
+								<select data-placeholder="Select Title" class="select" required = true>
+									<option>
+										<optgroup>
+				                            <option value="mr.">Mr.</option>
+				                            <option value="mrs.">Mrs.</option>
+				                            <option value="miss">Miss.</option>
+				                            <option value="dr.">Dr.</option>
+				                            <option value="prof.">Prof.</option>
+			                            </optgroup>
+			                        </option>
+		                        </select>
+							</div>
+
+							<div class="col-lg-5">
+								<label> First Name </label>
+									<%= text_field_tag 'FirstName' , nil , class: "form-control" , :required => true %>
+							</div>
+
+							<div class="col-lg-5">
+								<label> last Name </label>
+								<%= text_field_tag 'LastName' , nil , class: "form-control" , :required => true %>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="row">
+							<div class="col-lg-4">
+								<label>Job Title </label>
+								<%= text_field_tag :"JobTitle" , nil , class: "form-control" , :required => true %>
+							</div>
+							<div class="col-lg-8">
+								<label>Organization </label>
+								<%= text_field_tag :"org" , nil , class: "form-control" , :required => true %>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="row">
+							<div class="col-lg-3">
+								<label>Phone </label>
+								<%= text_field_tag :'ph_no' ,nil , placeholder: "+91 9988662244" , class: "form-control" , :required => true %>
+							</div>
+							<div class="col-lg-3">
+								<label>Country </label>
+								<select data-placeholder="Select Country" class="select" required = true>
+									<option>
+										<optgroup>
+				                            <option value="opt2">Australia</option>
+				                            <option value="opt3">India</option>
+				                            <option value="opt4">Rassia</option>
+		                            	</optgroup>
+		                        	</option>
+		                        </select>
+							</div>
+							<div class="col-lg-3">
+								<label>State </label>
+								<select data-placeholder="Select State" class="select" required = true>
+									<option>
+										<optgroup>
+				                            <option value="opt2">Andrapredaesh</option>
+				                            <option value="opt3">Gujarat</option>
+				                            <option value="opt4">Maharastra</option>
+				                        </optgroup>
+				                    </option>
+		                        </select>
+
+							</div>
+							<div class="col-lg-3">
+								<label>City </label>
+								<%= text_field_tag 'city' , nil , placeholder: "Enter City Name" , class: "form-control" , :required => true %>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label>Email </label>
+						<div class="row">
+							<div class="col-lg-5">
+								<%= text_field_tag 'email' ,nil , placeholder: "john" , class: "form-control" , :required => true %>
+							</div>
+							<div class="col-lg-5">
+								<div class="form-group has-feedback has-feedback-left">
+									<div class="form-control-feedback">
+										<i class="icon-mention text-muted"></i>
+									</div>
+								<%= text_field_tag 'host' ,nil , class: "form-control" , placeholder: "gmail.com" , :required => true %>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="row">
+							<div class="col-lg-10 col-md-5">
+								<label>Logo </label>
+								<%= file_field_tag 'img' , class: "file-input input-group" , :required => true %>
+							</div>
+						</div>
+					</div>
+					
+
+					<div class="form-group">
+						<label>Address </label>
+						<div class="row">
+							<div class="col-lg-12">
+								<%= text_area_tag 'address' , nil , :placeholder => "Enter your address here" , class: "form-control" , :required => true %>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</fieldset>
+			<fieldset>
+				<div>
+				<legend class="text-semibold">
+					<i class="icon-reading position-left"></i>
+					Social Details
+					<a class="control-arrow" data-toggle="collapse" data-target="#demo2">
+						<i class="icon-circle-down2"></i>
+					</a>
+				</legend>
+
+				<div class="collapse " id="demo2">
+        			<div class="form-group">
+        				<div class="form-group has-feedback has-feedback-left">
+							<div class="form-control-feedback">
+								<i class="icon-facebook"></i>
+							</div>
+							<%= text_field_tag 'host' ,nil , class: "form-control" , placeholder: "facebook"%>
+						</div>
+        			</div>
+        			<div class="form-group">
+        				<div class="form-group has-feedback has-feedback-left">
+							<div class="form-control-feedback">
+								<i class="icon-twitter"></i>
+							</div>
+							<%= text_field_tag 'host' ,nil , class: "form-control" , placeholder: "twitter" %>
+						</div>
+        			</div>
+        		</div>
+					</div>
+			</fieldset>
+
+			<div class="text-right">
+				<%= button_to 'Submit Form' , nil , class: "btn btn-primary" %>
+			</div>
+		</div>
+	<% end %>
+	
+</div>

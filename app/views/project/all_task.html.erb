@@ -1,0 +1,197 @@
+<%= content_for :header do %>
+	Task List
+<% end %>
+<!-- <body class="pace-done sidebar-xs"> -->
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<span class="my-heading">Open</span>
+				<%= link_to '' , add_task_path , class: "icon-plus2 pull-right"  %>
+			</div>
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table class="table datatable-basic">
+						<thead>
+							<tr>
+								<th>Subject</th>
+								<th>Assign to</th>
+								<th><i class="icon-calendar3"></i> Due Date &amp; Time</th>
+								<th>Priority</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<%= link_to 'RoR documentation' , nil  %>
+								</td>
+								<td><%= link_to 'Karan Vyas' , nil  %></td>
+								<td>15/04/2016 10:00 AM <i class="fa fa-clock-o"></i></td>
+								<td><label class="bg-orange">&nbsp;Medium&nbsp;</label></td>
+								<td><%= link_to '' ,add_task_path , class: "icon-pencil" %></td>
+							</tr>
+							<tr>
+								<td>
+									<%= link_to 'Follow-up for new project' , nil  %>
+								</td>
+								<td><%= link_to 'Mayur Shah' , nil  %></td>
+								<td >17/04/2016</td>
+								<td><label class="bg-orange">&nbsp;Medium&nbsp;</label></td>
+								<td><%= link_to '' ,add_task_path , class: "icon-pencil" %></td>
+							</tr>
+							<tr>
+								<td>
+									<%= link_to 'iOS desing moke ups' , nil  %>
+								</td>
+								<td><%= link_to 'Nimit Bagadiya' , nil  %></td>
+								<td>19/04/2016 1:00 PM <i class="fa fa-clock-o"></i></td>
+								<td><label class="bg-green">&nbsp;Low&nbsp;</label></td>
+								<td><%= link_to '' ,add_task_path , class: "icon-pencil" %></td>
+							</tr>
+							<tr>
+								<td>
+									<%= link_to 'Dashboard Desing' , nil  %>
+								</td>
+								<td><%= link_to 'Krishna Mehta' , nil  %></td>
+								<td>21/04/2016 3:00 PM <i class="fa fa-clock-o"></i> </td>
+								<td><label class="bg-danger">&nbsp;High&nbsp;</label></td>
+								<td><%= link_to '' ,add_task_path , class: "icon-pencil" %></td>
+							</tr>
+							<tr>
+								<td>
+									<%= link_to 'Interview Updates' , nil  %>
+								</td>
+								<td><%= link_to 'Sanjay Vinzuda' , nil  %></td>
+								<td>25/04/2016 5:00 PM <i class="fa fa-clock-o"></i></td>
+								<td><label class="bg-danger-800">&nbsp;Highest&nbsp;</label></td>
+								<td><%= link_to '' ,add_task_path , class: "icon-pencil" %></td>
+							</tr>
+						</tbody>
+					</table>
+
+				 </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <div class="row">
+	<div class="col-lg-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<span>Open</span>
+			</div>
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<tr class="my-tag">
+								<th>Subject</th>
+								<th><i class="icon-calendar3"></i> Due Date</th>
+								<th>Assign to</th> 
+								<th>Time</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<%= link_to 'RoR documentation' , nil  %>
+								</td>
+								<td>15/04/2016</td>
+								<td><%= link_to 'Karan Vyas' , nil  %></td>
+								<td><i class="fa fa-clock-o"></i> 10:00 AM</td>
+							</tr>
+							<tr>
+								<td>
+									<%= link_to 'iOS desing moke ups' , nil  %>
+								</td>
+								<td>19/04/2016</td>
+								<td><%= link_to 'Nimit Bagadiya' , nil  %></td>
+								<td><i class="fa fa-clock-o"></i> 1:00 PM</td>
+							</tr>
+							<tr>
+								<td>
+									<%= link_to 'Dashboard Desing' , nil  %>
+								</td>
+								<td>21/04/2016</td>
+								<td><%= link_to 'Krishna Mehta' , nil  %></td>
+								<td><i class="fa fa-clock-o"></i> 3:00 PM</td>
+							</tr>
+							<tr>
+								<td>
+									<%= link_to 'Interview Updates' , nil  %>
+								</td>
+								<td>25/04/2016</td>
+								<td><%= link_to 'Sanjay Vinzuda' , nil  %></td>
+								<td><i class="fa fa-clock-o"></i> 5:00 PM</td>
+							
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<span>Open</span>
+			</div>
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<tr class="my-tag">
+								<th>Subject</th>
+								<th><i class="icon-calendar3"></i> Due Date</th>
+								<th>Assign to</th> 
+								<th>Time</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<%= link_to 'RoR documentation' , nil  %>
+								</td>
+								<td>15/04/2016</td>
+								<td><%= link_to 'Karan Vyas' , nil  %></td>
+								<td><i class="fa fa-clock-o"></i> 10:00 AM</td>
+							</tr>
+							<tr>
+								<td>
+									<%= link_to 'iOS desing moke ups' , nil  %>
+								</td>
+								<td>19/04/2016</td>
+								<td><%= link_to 'Nimit Bagadiya' , nil  %></td>
+								<td><i class="fa fa-clock-o"></i> 1:00 PM</td>
+							</tr>
+							<tr>
+								<td>
+									<%= link_to 'Dashboard Desing' , nil  %>
+								</td>
+								<td>21/04/2016</td>
+								<td><%= link_to 'Krishna Mehta' , nil  %></td>
+								<td><i class="fa fa-clock-o"></i> 3:00 PM</td>
+							</tr>
+							<tr>
+								<td>
+									<%= link_to 'Interview Updates' , nil  %>
+								</td>
+								<td>25/04/2016</td>
+								<td><%= link_to 'Sanjay Vinzuda' , nil  %></td>
+								<td><i class="fa fa-clock-o"></i> 5:00 PM</td>
+							
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> --> 
+
+
+
+</body>

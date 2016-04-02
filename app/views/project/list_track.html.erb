@@ -1,0 +1,73 @@
+<%= content_for :header do %>
+	Setting - Tracks
+<% end %>
+<%= content_for :Listheader do %>
+	<li>Setting</li>
+	<li class="active">List Track</li>
+<% end %>
+<div class="row">
+	<div class="col-lg-3">
+		<%= render 'all_setting' %>
+	</div>
+	<div class="col-lg-9">
+		<div class="panel">
+			<div class="panel-heading">
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#basic-tab1" data-toggle="tab">
+						<span class="text-primary">Opportunity</span></a></li>
+					<li><a href="#basic-tab2" data-toggle="tab">
+						<span class="text-primary">Cases</span></a></li>
+				</ul>
+			</div>
+			<div class="panel-body">
+				<div class="tab-content">
+					<div class="tab-pane active" id="basic-tab1">
+						<div class="table-responsive">
+							<%= link_to 'Add New Opportunity Track' , add_track_path , class: 'btn btn-primary' %>
+							<table class="table">
+									<thead>
+										<th>Name</th>
+										<th>From track</th>
+										<th></th>
+										<th></th>
+									</thead>
+									<tbody>
+										<tr>
+											<td><%= link_to 'Hospital Management System' , nil %></td>
+											<td>The Start Date of the Track</td>
+											<td><i class="icon-pencil7"></i></td>
+											<td><i class="icon-cross2"></i></td>
+										</tr>
+									</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div class="tab-pane" id="basic-tab2">
+						<%= link_to 'Add New Case Track' , nil , class: 'btn btn-primary' %>
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+									<th>Name</th>
+									<th>From track</th>
+									<th></th>
+									<th></th>
+								</thead>
+								<tbody>
+									<tr>
+										<td></td>
+										<td></td>
+										<td><i class="icon-pencil7"></i></td>
+										<td><i class="icon-cross2"></i></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
+
+

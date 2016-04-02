@@ -1,0 +1,53 @@
+<%= content_for :header do %>
+	Setting - Case List
+<% end %>
+<%= content_for :Listheader do %>
+	<li>Setting</li>
+	<li class="active">List Case</li>
+<% end %>
+<div class="row">
+	<div class="col-lg-3">
+		<%= render 'all_setting' %>
+	</div>
+	<div class="col-lg-9">
+		<div class="panel panel-flat">
+			<div class="panel-heading">
+				<span class="my-heading">Case</span>
+				<%=link_to 'Add Case' , add_case_path , class: "btn btn-default text-blue pull-right" %>
+			</div>
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<th>Issue</th>
+							<th>Status</th>
+							<th>Close Date</th>
+							<th>Assined to</th>
+						</thead>
+						<tbody class="case-text">
+							<tr>
+								<td><%= link_to 'Project Dealing' , case_details_path %></td>
+								<td><lable class="lable bg-success">&nbsp;Open&nbsp;</label></td>
+								<td></td>
+								<td>Krishna Mehta</td>
+							</tr>
+							<tr>
+								<td>Project Negotiation</td>
+								<td><lable class="lable bg-success">&nbsp;Open&nbsp;</label></td>
+								<td></td>
+								<td>Ronak Mehta</td>
+							</tr>
+							<tr>
+								<td>Project Designing</td>
+								<td><lable class="lable bg-warning">&nbsp;Close&nbsp;</label></td>
+								<td>22/02/2016</td>
+								<td>Karan Vyas</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

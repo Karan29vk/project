@@ -1,0 +1,62 @@
+<%= content_for :header do %>
+	Setting - List Status
+<% end %>
+<%= content_for :Listheader do %>
+	<li><a href="#">Setting</a></li>
+	<li class="active">List Status</li>
+<% end %>
+<div class="row">
+	<div class="col-lg-3">
+		<%= render 'all_setting' %>
+	</div>
+	<div class="col-lg-9">
+		<div class="panel panel-flat">
+			<div class="panel-heading">
+				<span class="my-heading">All Status</span>
+					<%= link_to 'Add Status' , add_status_path , class: "btn btn-primary pull-right"%>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Edit</th>
+									<th>Delete</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Open</td>
+									<td><%= link_to '' , add_task_category_path , class: "glyphicon glyphicon-pencil" %></td>
+									<td><%= link_to '' , add_task_category_path , class: "icon-cross" %></td>
+								</tr>
+								<tr>
+									<td>On-hold</td>
+									<td><%= link_to '' , add_task_category_path , class: "glyphicon glyphicon-pencil" %></td>
+									<td><%= link_to '' , add_task_category_path , class: "icon-cross" %></td>
+								</tr>
+								<tr>
+									<td>Waiting for Approval</td>
+									<td><%= link_to '' , add_task_category_path , class: "glyphicon glyphicon-pencil" %></td>
+									<td><%= link_to '' , add_task_category_path , class: "icon-cross" %></td>
+								</tr>
+								<tr>
+									<td>Pending</td>
+									<td><%= link_to '' , add_task_category_path , class: "glyphicon glyphicon-pencil" %></td>
+									<td><%= link_to '' , add_task_category_path , class: "icon-cross" %></td>
+								</tr>
+								<tr>
+									<td>Close</td>
+									<td><%= link_to '' , add_task_category_path , class: "glyphicon glyphicon-pencil" %></td>
+									<td><%= link_to '' , add_task_category_path , class: "icon-cross" %></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

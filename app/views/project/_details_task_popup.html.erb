@@ -1,0 +1,43 @@
+add_note_popup
+<div class="modal-dialog">
+	<div class="modal-content">
+	   <div class="modal-header">
+        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+        	<h5 class="modal-title">Add Note</h5>
+       </div>
+
+		<form action="#">
+			<div class="modal-body">
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-6">
+							<%= label_tag :Note %>
+							<%= text_field_tag :Note , nil , class: "form-control" , value: 'Add points on Get a box & Gift a box' %>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-lg-4 col-md-4">
+							<%= label_tag :Date %>
+							<%= text_field_tag 'date' , nil , class: "form-control pickadate" , value: Date.today %>
+						</div>
+					</div>
+				</div>
+			
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-8">
+							<%= label_tag :Note %>
+							<%= text_area_tag :Note , "When ever a logged in customer signs up for a Get a Box or Gift a box, please apply the appropriate number of points to their account." , rows: 5 , class: "form-control" %>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<button type="button" class="btn btn-link" data-dismiss="modal">Close</button> 
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

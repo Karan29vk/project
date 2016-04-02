@@ -1,0 +1,124 @@
+<%= content_for :header do %>
+	Opportunity Details
+<% end %>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="row">
+			<div class="col-lg-10 col-md-10">
+				<h6 class="text-semibold">Opportunity Details</h6>
+			</div>
+			<div class="col-lg-2 col-md-2">
+				<%= button_to 'Edit' , add_opportunity_path,  class: "btn btn-default text-blue pull-right" %>
+			</div>
+		</div>
+	</div>
+	<div class="panel-body">
+		<div class="form-group">
+			<div class="row">
+				<div class="col-lg-12 col-md-12">
+					<div>
+						<h5><big>Milestone</big></h5>
+						<span>Bid(70%)</span>
+						<span class="pull-right">Expacted Value : <i class="fa fa-rupee"></i> 2500000</span>
+					</div>
+					<div class="progress progress-xxs">
+						<div class="progress-bar progress-bar-primary" style="width: 70%">
+						</div>
+					</div>
+					<div>
+						<p>
+							<span class="text-black">Expacted Close Date : 10/05/2016</span>
+							<span class="pull-right">based on <i class="fa fa-rupee"></i> 25000 for 10 months
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="row">
+				<div class="col-lg-8 col-md-8">
+					<label><b>Name : </b></label>
+					<big> Business Management System </big>
+			
+					<p><label><b>Details : </b></label></p>
+					<p> BMS is a Business Management System. This project is focusing on the
+					main businees modules which help the company and department staff to manage their daily work and functions on daily lifes. Moduels are to be cover in the project are Core , CRM ( Customer Relationship Management ) , Employee Management , Recruitment , Invoice</p>
+					</ul>
+				</div>
+				<div class="col-lg-4 col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							Milestone History
+						</div>
+						<div class="panel-body">
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+										<th>Name</th>
+										<th>Date</th>
+									</thead>
+									<tbody>
+										<tr>
+											<td>New</td>
+											<td>26/03/2016</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-8 col-md-8">
+					<label><b>Applied Track : </b></label>
+					<p>
+						<span class="text-primary">BMS Track</span>
+					</p>
+					<div class="form-group">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								Track Task
+							</div>
+							<div class="panel-body">
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
+											<th>Name</th>
+											<th>Category</th>
+											<th>Date</th>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Meeting with HR</td>
+												<td>Meeting</td>
+												<td>15/03/2016</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-8 col-md-8">
+					<big><i class="icon-files-empty"></i>Notes</big>
+					
+					<%= link_to 'Add Note' , "#modal_form_vertical" , class:"text-blue btn btn-default pull-right" , "data-toggle" => "modal" %>
+							<div id="modal_form_vertical" class="modal fade">
+								<%= render 'add_note_popup' %>
+							</div>
+					<p><span class="text-bold"> Note by : </span> Dhaval Trivedi (17/03/2016)
+					<p>They require a high security role base system which need to be discuss first then and then we can continue with the disscusion. We are also suppose to give details of employees who are suppose to work on the project.</p>
+
+
+					<p><span class="text-bold"> Note by : </span> Dhaval Trivedi (15/03/2016)
+					<p>They require a high security role base system which need to be discuss first then and then we can continue with the disscusion. We are also suppose to give details of employees who are suppose to work on the project.</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

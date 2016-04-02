@@ -1,0 +1,106 @@
+<%= content_for :header do %>
+	Setting - List Cases - Case Details
+<% end %>
+<%= content_for :Listheader do %>
+	<li><a href="#">Setting</a></li>
+	<li><a href="list_cases">List Cases</a></li>
+	<li class="active">Case Details</li>
+<% end %>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="row">
+			<div class="col-lg-10 col-md-10">
+				<span class="my-heading">Case Details</span>
+			</div>
+			<div class="col-lg-2 col-md-2">
+				<%= button_to 'Edit' , add_case_path,  class: "case-text btn btn-default text-blue pull-right" %>
+			</div>
+		</div>
+	</div>
+	<div class="panel-body">
+		<div class="form-group">
+			<div class="row">
+				<div class="col-lg-10 col-md-10">
+					<div id="status_open">
+						<big>Status</big>
+						<span class="lable bg-success-800">&nbsp;Open&nbsp;</span>	
+					</div>
+					<div id="status_close">
+						<big>Status</big>
+						<span class="lable bg-danger-800">&nbsp;Close&nbsp;</span>	
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-2">
+					<div id="close">
+						<button class="text-blue btn btn-default pull-right">Close Case</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="row">
+				<div class="col-lg-10 col-md-10">
+					<label><b>Case : </b></label>
+					<big> Project Designing </big>
+					<p><label><b>Case Details : </b></label></p>
+					<p> Client is facing problem with the nevigation. </p>
+					<p>Some images also not in the palce when screen resizes and need changes in the color scheme. </p>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+				<div class="col-lg-10 col-md-10">
+					<big>Track</big>
+					<br>
+					<span class="text-center">Project Dealing</span>
+					<div class="table-responsive">
+						<table class="tabel table-condensed">
+							<tbody class="case-text">
+								<tr>
+									<td><%= check_box_tag 'accept' %></td>
+									<td><%= link_to 'Meeting' , add_task_path %></td>
+									<td class="pull-right">08/04/2016</td>
+								</tr>
+								<tr>
+									<td><%= check_box_tag 'accept'%></td>
+									<td><%= link_to 'follow-up' , add_task_path %></td>
+									<td class="pull-right">15/04/2016</td>
+								</tr>
+								<tr>
+									<td><%= check_box_tag 'accept'%></td>
+									<td><%= link_to 'E-Mail' , add_task_path %></td>
+									<td class="pull-right">26/04/2016</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8 col-md-8">
+				<big><i class="icon-files-empty"></i>Notes</big>
+				<%= link_to 'Add Note' , "#modal_form_vertical" , class:"text-blue btn btn-default pull-right" , "data-toggle" => "modal" %>
+				<div id="modal_form_vertical" class="modal fade">
+					<%= render 'add_note_popup' %>
+				</div>
+				<p><span class="text-bold"> Note by : </span> Dhaval Trivedi (17/03/2016)
+				<p>They require a high security role base system which need to be discuss first then and then we can continue with the disscusion. We are also suppose to give details of employees who are suppose to work on the project.</p>
+
+
+				<p><span class="text-bold"> Note by : </span> Dhaval Trivedi (15/03/2016)
+				<p>They require a high security role base system which need to be discuss first then and then we can continue with the disscusion. We are also suppose to give details of employees who are suppose to work on the project.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$('#status_close').hide();
+	$('#close').on('click' , function(){
+		$('#status_open').hide();
+		$('#status_close').show();
+		$('#close').hide();
+	});
+</script>

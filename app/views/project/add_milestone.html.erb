@@ -1,0 +1,81 @@
+<%= content_for :header do %>
+	Setting - List Milestone - Add Milestone
+<% end %>
+<%= content_for :Listheader do %>
+	<li><a href="#">Setting</a></li>
+	<li><a href="list_milestone">List Milestone</a></li>
+	<li class="active">Add Milestone</li>
+<% end %>
+<div class="row">
+	<div class="col-lg-3 col-md-3">
+		<%= render 'all_setting' %>
+	</div>
+	<div class="col-lg-9 col-md-9">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<span class="my-heading">Milestone</span>
+				<%= link_to ' ' , list_milestone_path , class: "glyphicon glyphicon-arrow-left pull-right" %>
+			</div>
+			<div class="panel-body">
+				<%= form_tag({:controller => "project", :action => "list_task_category"}, :class=> "form-horizontal form-validate-jquery" )do %>
+					<fieldset>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-lg-8 col-md-8">
+									<label>Milestone Name </label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-8 col-md-8">
+									<%= text_field_tag 'name' , nil , class: "form-control" , :placeholder => "Like : Bid , Negotiation , Won , Loss (etc)..." , required: true %>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-lg-8 col-md-8">
+									<label>Details </label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-8 col-md-8">
+									<%= text_area_tag 'details' , nil , class: "form-control" , required: true %>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-lg-8 col-md-8">
+									<span>Probability of Winning*</span><p class="text-muted">
+									Probability the opportunity will be won at this milestone</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-2 col-md-2">
+									<%= text_field_tag 'persantage' , nil , class: "form-control", required: true %>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-lg-8 col-md-8">
+									<span>Close Opporunity</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-8 col-md-8">
+									<%= check_box_tag 'closing opp', class: "form-control" %>&nbsp;This milestione close the opportunity
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					<div class="row">
+						<div class="col-lg-8 col-md-8">
+							<%= submit_tag 'Save' , class: "btn btn-primary" %>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

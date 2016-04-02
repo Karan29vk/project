@@ -1,0 +1,75 @@
+<%= content_for :header do %>
+	Sales Pipeline - Close Opportunity
+<% end %>
+<%= content_for :Listheader do %>
+	<li><a href="sales_pipeline">Sales Pipeline</a></li>
+	<li class="active">Close Opportunity</li>
+<% end %>
+<div class="panel">
+	<div class="panel-heading">
+		<legend>
+			<h6 class="text-semibold"> Sales Pipeline </h6>
+		</legend>
+	</div>
+	<div class="panel-body">
+		<div class="form-group">
+			<div class="row">
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<th>Opportunity</th>
+							<th>Milestone</th>
+							<th>Value</th>
+							<th>Owner</th>
+							<th>Expacted Close Date</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td><%= link_to 'Speak To My Agent' , opportunity_details_path %></td>
+								<td>
+									<span class="text-bold">Won(100%)</span>
+									<div class="progress progress-xxs">
+										<div class="progress-bar progress-bar-info" style="width: 100%">
+										</div>
+									</div>
+								</td>
+								<td>500000</td>
+								<td>Karan Vyas</td>
+								<td>13/04/2016</td>
+								
+							</tr>
+							<tr>
+								<td><%= link_to 'Brain Shop' , nil %></td>
+								<td>
+									<span class="text-bold">Won(100%)</span>
+									<div class="progress progress-xxs">
+										<div class="progress-bar progress-bar-info" style="width: 100%">
+										</div>
+									</div>
+								</td>
+								<td>300000</td>
+								<td>Nayan Patel</td>
+								<td>30/04/2016</td>
+								
+							</tr>
+							<tr>
+								<td><%= link_to 'The Vogue Code' , nil %></td>
+								<td>
+									<span class="text-bold">Lose(0%)</span>
+									<div class="progress progress-xxs">
+										<div class="progress-bar progress-bar-info" style="width: 0%">
+										</div>
+									</div>
+								</td>
+								<td>250000</td>
+								<td>Ronak Mehta</td>
+								<td>30/04/2016</td>
+								
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

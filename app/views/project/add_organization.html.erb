@@ -1,0 +1,211 @@
+<%= content_for :header do %>
+	Add Organization
+<% end %>
+<%= content_for :Listheader do %>
+	<li><a href="list_organization">List Organization</a></li>
+	<li class="active">Add Organization</li>
+<% end %>
+<form action="#">
+	<div class="panel panel-flat">
+		<div class="panel-heading">
+			<h5 class="panel-title">New Organization</h5>
+			<div class="heading-elements">
+				<ul class="icons-list">
+            		<li><a data-action="collapse"></a></li>
+            		<li><a data-action="reload"></a></li>
+            		<li><a data-action="close"></a></li>
+            	</ul>
+        	</div>
+		<a class="heading-elements-toggle"><i class="icon-menu"></i></a></div>
+		<%= form_tag({:controller => "project", :action => "add_organization"}, :class=> "form-horizontal form-validate-jquery" )do %>
+			<div class="panel-body">
+				<fieldset>
+					<legend class="text-semibold">
+						<i class="icon-file-text2 position-left"></i>
+						Enter information
+						<a data-target="#demo1" data-toggle="collapse" class="control-arrow collapsed" aria-expanded="false">
+							<i class="icon-circle-down2"></i>
+						</a>
+					</legend>
+
+					<div id="demo1" class="collapse in" aria-expanded="false" style="">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-lg-12">
+									<label> Organization Name </label>
+										<%= text_field_tag 'OrgName' , nil , class: "form-control" %>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="row">
+								<div class="col-lg-12">
+									<label>Tags </label>
+									<div class="tokenfield form-control">
+										<%= text_field_tag 'tag' , nil ,class: "token-input" %>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-lg-3">
+									<label>Phone </label>
+									<%= text_field_tag :'ph_no' ,nil , placeholder: "+91 9988662244" , class: "form-control" %>
+								</div>
+								<div class="col-lg-3">
+									<label>Country </label>
+									<select class="select">
+			                            <option value="opt1">Select</option>
+			                            <option value="opt2">Australia</option>
+			                            <option value="opt3">India</option>
+			                            <option value="opt4">Rassia</option>
+			                        </select>
+								</div>
+								<div class="col-lg-3">
+									<label>State </label>
+									<select class="select">
+			                            <option value="opt1">Select</option>
+			                            <option value="opt2">Andrapredaesh</option>
+			                            <option value="opt3">Gujarat</option>
+			                            <option value="opt4">Maharastra</option>
+			                        </select>
+
+								</div>
+								<div class="col-lg-3">
+									<label>City </label>
+									<%= text_field_tag 'city' , nil , placeholder: "Enter City Name" , class: "form-control" %>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label>Email </label>
+							<div class="row">
+								<div class="col-lg-5">
+									<%= text_field_tag 'email' ,nil , placeholder: "john" , class: "form-control" %>
+								</div>
+								<div class="col-lg-5">
+									<div class="form-group has-feedback has-feedback-left">
+										<div class="form-control-feedback">
+											<i class="icon-mention text-muted"></i>
+										</div>
+									<%= text_field_tag 'host' ,nil , class: "form-control" , placeholder: "gmail.com" %>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="row">
+								<div class="col-lg-12">
+									<label>Logo </label>
+									<%= file_field_tag 'img' , class: "file-input input-group" %>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label>Address </label>
+							<div class="row">
+								<div class="col-lg-12">
+									<%= text_area_tag 'address' , nil , placeholder: "Enter your address here", class: "form-control" %>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label>Note </label>
+							<div class="row">
+								<div class="col-lg-12">
+									<%= text_area_tag 'note' , nil , placeholder: "Enter Note here", class: "form-control" %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend class="text-semibold">
+						<i class="icon-reading position-left"></i>
+						Add Person Details
+						<a class="control-arrow" data-toggle="collapse" data-target="#demo2">
+							<i class="icon-circle-down2"></i>
+						</a>
+					</legend>
+
+					<div class="collapse" id="demo2">
+	        			<div class="form-group">
+							<div class="row">
+								<div class="col-lg-2">
+									<label> Title </label>
+									<select class="select select2-hidden-accessible">
+			                            <option value="opt1">Select</option>
+			                            <option value="opt2">Mr.</option>
+			                            <option value="opt3">Mrs.</option>
+			                            <option value="opt4">Miss.</option>
+			                            <option value="opt5">Dr.</option>
+			                            <option value="opt6">Prof.</option>
+			                        </select>
+								</div>
+
+								<div class="col-lg-5">
+									<label> First Name </label>
+										<%= text_field_tag 'FirstName' , nil , class: "form-control" %>
+								</div>
+
+								<div class="col-lg-5">
+									<label> Last Name </label>
+									<%= text_field_tag 'LastName' , nil , class: "form-control" %>
+								</div>
+							</div>
+						</div>
+					</div>
+
+						
+				</fieldset>
+
+
+				<fieldset>
+					<legend class="text-semibold">
+						<i class="icon-reading position-left"></i>
+						Social Details
+						<a class="control-arrow" data-toggle="collapse" data-target="#demo3">
+							<i class="icon-circle-down2"></i>
+						</a>
+					</legend>
+
+					<div class="collapse " id="demo3">
+	        			<div class="form-group">
+	        				<div class="form-group has-feedback has-feedback-left">
+								<div class="form-control-feedback">
+									<i class="icon-facebook"></i>
+								</div>
+								<%= text_field_tag 'host' ,nil , class: "form-control" , placeholder: "facebook" %>
+							</div>
+	        			</div>
+	        			<div class="form-group">
+	        				<div class="form-group has-feedback has-feedback-left">
+								<div class="form-control-feedback">
+									<i class="icon-twitter"></i>
+								</div>
+								<%= text_field_tag 'host' ,nil , class: "form-control" , placeholder: "twitter" %>
+							</div>
+	        			</div>
+
+						
+				</fieldset>
+
+				<div class="text-right"> 
+					<button type="submit" class="btn btn-primary">Submit form <i class="icon-arrow-right14 position-right"></i></button>
+				</div>
+
+			</div>
+		<% end %>
+	</div>
+	
+</form>

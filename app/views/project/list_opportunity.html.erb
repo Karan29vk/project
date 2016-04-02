@@ -1,0 +1,123 @@
+<%= content_for :header do %>
+	List Opportunity
+<% end %>
+<%= content_for :Listheader do %>
+	<li class="active">List Opportunity</li>
+<% end %>
+<div class="row">
+	<div class="panel panel-flat">
+		<div class="panel-heading">
+			<legend><h6 class="text-semibold">Opportunity
+			<%= link_to '' , add_opportunity_path , class: "icon-plus2 pull-right" %></h6></legend>
+		</div>
+
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table class="table datatable-basic">
+					<thead class="bg-blue">
+						<tr>
+							<th>Name</th>
+							<th>Expacted Value</th>
+							<th>Expacted Colse Date</th>
+							<th>Relates to</th>
+							<th>Status</th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><%= link_to 'Business Management System' , opportunity_details_path %></td>
+							<td>250000</td>
+							<td>10/05/2016</td>
+							<td><%= link_to 'Complitech PVT LTD' , nil %></td>
+							<td><label class="label bg-blue">Bid</label></td>
+							<td><%= link_to '' , nil, class: "icon-pen6" %></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><%= link_to 'Application Development for iOS' , opportunity_details_path %></td>
+							<td>175000</td>
+							<td>17/04/2016</td>
+							<td><%= link_to 'Net Squre Solutions' , nil %></td>
+							<td><label class="label bg-orange">Negotiation</label></td>
+							<td><%= link_to '' , nil, class: "icon-pen6" %></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><%= link_to 'Stadium' , opportunity_details_path %></td>
+							<td>150000</td>
+							<td>15/04/2016</td>
+							<td><%= link_to 'Complitech PVT LTD' , nil %></td>
+							<td><label class="label bg-orange">Negotiation</label></td>
+							<td><%= link_to '' , nil, class: "icon-pen6" %></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><%= link_to 'FashionSprout' , opportunity_details_path %></td>
+							<td>350000</td>
+							<td>20/05/2016</td>
+							<td><%= link_to 'indianic' , nil %></td>
+							<td><label class="label bg-blue">Bid</label></td>
+							<td><%= link_to '' , nil, class: "icon-pen6" %></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><%= link_to 'Select - Home Secutiry' , opportunity_details_path %></td>
+							<td>150000</td>
+							<td>21/06/2016</td>
+							<td><%= link_to 'Net Squre Solutions' , nil %></td>
+							<td><label class="label bg-green">New</label></td>
+							<td><%= link_to '' , nil, class: "icon-pen6" %></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><%= link_to 'Doctortv' , opportunity_details_path %></td>
+							<td>264000</td>
+							<td>14/07/2016</td>
+							<td><%= link_to 'Complitech PVT LTD' , nil %></td>
+							<td><label class="label bg-teal">Analisys</label></td>
+							<td><%= link_to '' , nil, class: "icon-pen6" %></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><%= link_to 'Appsylum' , opportunity_details_path %></td>
+							<td>148000</td>
+							<td>15/07/2016</td>
+							<td><%= link_to 'Net Squre Solutions' , nil %></td>
+							<td><label class="label bg-violet">Design</label></td>
+							<td><%= link_to '' , nil, class: "icon-pen6" %></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><%= link_to 'Rush Hockey' , opportunity_details_path %></td>
+							<td>175000</td>
+							<td>03/09/2016</td>
+							<td><%= link_to 'indianic' , nil %></td>
+							<td><label class="label bg-violet">Design</label></td>
+							<td><%= link_to '' , nil, class: "icon-pen6" %></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>		
+</div>
+
+<script type="text/javascript">
+
+
+Morris.Donut({
+  element: 'pie-chart',
+  data: [
+  	{label: "New", value: 2},
+    {label: "Bid", value: 15},
+    {label: "Analisys", value: 20},
+    {label: "Negotiation", value: 35},
+    {label: "Won", value: 20},
+    {label: "Lose", value: 50}
+  ]
+});
+
+</script>

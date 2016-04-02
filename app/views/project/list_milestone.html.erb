@@ -1,0 +1,80 @@
+<%= content_for :header do %>
+	Setting - List Milestone
+<% end %>
+<%= content_for :Listheader do %>
+	<li>Setting</li>
+	<li class="active">List Milestone</li>
+<% end %>
+<div class="row">
+	<div class="col-lg-3">
+		<%= render 'all_setting' %>
+	</div>
+	<div class="col-lg-9">
+		<div class="panel panel-flat">
+			<div class="panel-heading">
+				<span class="my-heading">Milestones</span>
+					<%= link_to 'Add Milestone' , add_milestone_path , class: "btn btn-primary pull-right"%>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th class="text-bold">Name</th>
+									<th class="text-bold">Probability of Winning</th>
+									<th class="text-bold">Edit</th>
+									<th class="text-bold">Delete</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>New</td>
+									<td>10%</td>
+									<td><%= link_to '' , add_task_category_path , class: "glyphicon glyphicon-pencil" %></td>
+									<td><%= link_to '' , add_task_category_path , class: "icon-cross" %></td>
+								</tr>
+								<tr>
+									<td>Analysis</td>
+									<td>25%</td>
+									<td><%= link_to '' , add_task_category_path , class: "glyphicon glyphicon-pencil" %></td>
+									<td><%= link_to '' , add_task_category_path , class: "icon-cross" %></td>
+								</tr>
+								<tr>
+									<td>Desinging</td>
+									<td>50%</td>
+									<td><%= link_to '' , add_task_category_path , class: "glyphicon glyphicon-pencil" %></td>
+									<td><%= link_to '' , add_task_category_path , class: "icon-cross" %></td>
+								</tr>
+								<tr>
+									<td>Negotiation</td>
+									<td>80%</td>
+									<td><%= link_to '' , add_task_category_path , class: "glyphicon glyphicon-pencil" %></td>
+									<td><%= link_to '' , add_task_category_path , class: "icon-cross" %></td>
+								</tr>
+								<tr>
+									<td>Bid</td>
+									<td>70%</td>
+									<td><%= link_to '' , add_task_category_path , class: "glyphicon glyphicon-pencil" %></td>
+									<td><%= link_to '' , add_task_category_path , class: "icon-cross" %></td>
+								</tr>
+								<tr>
+									<td>Won</td>
+									<td>100%</td>
+									<td></td>
+									<td><%= link_to '' , add_task_category_path , class: "icon-cross" %></td>
+								</tr>
+								<tr>
+									<td>Loss</td>
+									<td>0%</td>
+									<td></td>
+									<td><%= link_to '' , add_task_category_path , class: "icon-cross" %></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

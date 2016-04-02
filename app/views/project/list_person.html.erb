@@ -1,0 +1,44 @@
+<%= content_for :header do %>
+	People &amp; Organization - List Person
+<% end %>
+<%= content_for :Listheader do %>
+	<li>People &amp; Organization</li>
+	<li class="active">List Person</li>
+<% end %>
+<div class="panel panel-flat">
+	<div class="panel-heading">
+		<h6 class="text-semibold">List People
+		<%= link_to '' , add_person_path , class: "icon-plus2 pull-right" %></h6>
+	</div>
+	<div class="panel-body">
+		<div class="table-responsive">
+			<table class="table datatable-basic">
+				<thead>
+					<tr class="bg-blue">
+						<th></th>
+						<th>Name</th>
+						<th>Details</th>
+					</tr>
+				</thead>
+			    <tbody>
+			      <tr>
+			        <td><%= image_tag("/avatar-st.png" , class: "logo") %></td>
+			        <td><%= link_to 'Darshil Shah' , person_profile_path %></td>
+			        <td>
+			        	<span class="text-blue"> darshil@gymindia.com </span>
+						<br/>8511581101 (Mobile)
+					</td>
+			      </tr>
+			      <tr>
+			        <td><%= image_tag("/avatar-st.png" , class: "logo") %></td>
+			        <td> Smit Gandhi</td>
+			        <td>
+			        	<span class="text-blue"> gandhi.smit@infoidea.com </span>
+						<br/>8905144625 (Mobile)
+					</td>
+			      </tr>
+			    </tbody>
+			</table>
+		</div>
+	</div>
+</div>

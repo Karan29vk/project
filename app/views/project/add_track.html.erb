@@ -1,0 +1,153 @@
+<%= content_for :header do %>
+	Setting - List Track - Add Track
+<% end %>
+<%= content_for :Listheader do %>
+	<li>Setting</li>
+	<li><a href="list_track">List Track</a></li>
+	<li class="active">Add Track</li>
+<% end %>
+<div class="row">
+	<div class="col-lg-3 col-md-3">
+		<%= render 'all_setting' %>
+	</div>
+	<div class="col-lg-9 col-md-9">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<span class="my-heading">New Track</span>
+				<%=link_to 'Listing page' , list_track_path , class:" icon-arrow-left15 pull-right"%>
+			</div>
+			<%= form_tag({:controller => "project", :action => "list_track"}, :class=> "form-horizontal form-validate-jquery" )do %>
+				<div class="panel-body">
+					<div class="form-group">
+						<div class="row">
+							<div class="col-lg-8 col-md-8">
+								<label> Name </label>
+								<%= text_field_tag :Name , nil , class: "form-control" , required: true %>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-lg-8 col-md-8">
+								<label> Calculate due dates for tasks in this track based on </label>
+							
+								<select class="select">
+			                        <option value="opt1">Select</option>
+			                        <option value="opt2">The Start Date of the track</option>
+			                        <option value="opt3">An end date chosen when adding track</option>
+			                    </select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								Task
+							</div>
+							<div class="panel-body">
+								<div class="table-responsive">
+									<div class="content">
+										<div class="form-group">
+											<legend>
+											<div class="row">										
+												<div class="col-lg-1 col-md-1">
+													<span class="text-bold">#</span>
+												</div>
+												<div class="col-lg-4 col-md-4">
+													<span class="text-bold">Name</span>
+												</div>
+												<div class="col-lg-3 col-md-3">
+													<span class="text-bold">Category</span>
+												</div>
+												<div class="col-lg-4 col-md-4">
+													<span class="text-bold">Days</span>
+												</div>
+											</div>
+											</legend>
+											<div class="row">
+												<div class="col-lg-1 col-md-1">
+													<%= link_to 'x', nil , class:"close pull-left" %>
+													 &nbsp;1
+												</div>
+												<div class="col-lg-4 col-md-4">
+													<%= text_field_tag 'name' , nil , class: 'form-control' %>
+												</div>
+												<div class="col-lg-3 col-md-3">
+													<select class="select">
+							                            <option value="opt1">Select</option>
+							                            <option value="opt2">Call</option>
+							                            <option value="opt3">Meeting</option>
+							                            <option value="opt3">Follow-up</option>
+							                            <option value="opt3">E Mail</option>
+							                            <option value="opt3">Send</option>
+							                            <option value="opt3">Milestone</option>
+							                        </select>
+												</div>
+												<div class="col-lg-1 col-md-1">
+													<%= text_field_tag "due" , nil , class: 'form-control'%>
+												</div>
+												<div class="col-lg-3 col-md-3">
+													days after the track starts
+												</div>
+											</div>
+										</div>
+										<div class="row" id="add_task">
+												<div class="col-lg-1 col-md-1">
+													<%= link_to 'x', nil , class:"close pull-left" %>
+													 &nbsp;2
+												</div>
+												<div class="col-lg-4 col-md-4">
+													<%= text_field_tag 'name' , nil , class: 'form-control' %>
+												</div>
+												<div class="col-lg-3 col-md-3">
+													<select class="select">
+							                            <option value="opt1">Select</option>
+							                            <option value="opt2">Call</option>
+							                            <option value="opt3">Meeting</option>
+							                            <option value="opt3">Follow-up</option>
+							                            <option value="opt3">E Mail</option>
+							                            <option value="opt3">Send</option>
+							                            <option value="opt3">Milestone</option>
+							                        </select>
+												</div>
+												<div class="col-lg-1 col-md-1">
+													<%= text_field_tag "due" , nil , class: 'form-control'%>
+												</div>
+												<div class="col-lg-1 col-md-1">
+													days after
+												</div>
+												<div class="col-lg-2 col-md-2">
+													<select class="select">
+							                            <option value="opt1">last task</option>
+							                            <option value="opt2">Track Start</option>
+							                        </select>
+												</div>
+											</div>
+										</div>
+
+								</div>
+								
+								<%= button_to 'Add Task' , nil , id: 'addT' ,  class: 'text-blue btn btn-default' %>
+								
+							</div>
+
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-lg-8 col-md-8">
+								<%= button_to 'Save' , list_track_path , class: "btn btn-primary" %>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$('#add_task').hide();
+	$('#addT').on('click' , function(){
+		$('#add_task').show();
+	});
+</script>

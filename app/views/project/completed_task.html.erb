@@ -1,0 +1,281 @@
+<div class="row">
+	<div class="col-lg-3">
+		<div class="panel panel-flat">
+			<div class="panel-heading">
+				<h6 class="panel-title">Navigation</h6>
+			<a class="heading-elements-toggle"><i class="icon-menu"></i></a></div>
+
+		
+
+			<div class="list-group list-group-borderless no-padding-top">
+				<div class="sidebar-default">
+					<div class="sidebar-category sidebar-category-visible">
+						<div class="category-content no-padding">
+							<ul class="navigation navigation-main navigation-accordion">
+								<li>
+									<a class="list-group-item" href="#">
+										<i class="icon-task"></i>
+										My Task
+									</a>
+									<ul>
+										<li>
+											<a href="/completed_task">
+												<i class="icon-checkmark2"></i>
+												Completed Task
+											</a>
+										</li>
+										<li>
+											<a class="list-group-item" href="/open_task">
+												<i class="icon-clipboard2"></i>
+												Open Task
+											</a>
+										</li>
+										<li>
+											<a class="list-group-item" href="#">
+												<i class="icon-cross2"></i>
+												Closed Task
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				
+				<a class="list-group-item" href="#"><i class="icon-cash2"></i> Opportunity</a>
+				<a class="list-group-item" href="#"><i class="icon-tree7"></i> Notes </a>
+				<a class="list-group-item" href="#"><i class="icon-users"></i> Team Members</a>
+				<div class="list-group-divider"></div>
+				<a class="list-group-item" href="#"><i class="icon-cog3"></i> Account settings</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-9">
+
+					<!-- Task manager table -->
+					<div class="panel panel-white">
+						<div class="panel-heading">
+							<h6 class="panel-title">Task manager</h6>
+							<div class="heading-elements">
+								<ul class="icons-list">
+			                		<li><a data-action="collapse"></a></li>
+			                		<li><a data-action="reload"></a></li>
+			                		<li><a data-action="close"></a></li>
+			                	</ul>
+		                	</div>
+						</div>
+
+						<table class="table tasks-list table-lg">
+							<thead>
+								<tr>
+									<th>#</th>
+					                <th>Task Description</th>
+					                <th>Priority</th>
+					                <th>Latest update</th>
+					                <th>Status</th>
+					            </tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>#25</td>
+					                <td>
+
+					                </td>
+					                <td>
+					                	<div class="btn-group">
+											<a href="#" class="label label-danger dropdown-toggle" data-toggle="dropdown">Highest <span class="caret"></span></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li class="active"><a href="#"><span class="status-mark position-left bg-danger"></span> Highest priority</a></li>
+												<li><a href="#"><span class="status-mark position-left bg-info"></span> High priority</a></li>
+												<li><a href="#"><span class="status-mark position-left bg-primary"></span> Normal priority</a></li>
+												<li><a href="#"><span class="status-mark position-left bg-success"></span> Low priority</a></li>
+											</ul>
+										</div>
+				                	</td>
+					                <td>
+					                	
+				                	</td>
+					                <td>
+					                	<select name="status" class="select" data-placeholder="Select status">
+					                		<option value="open">Open</option>
+					                		<option value="hold">On hold</option>
+					                		<option value="resolved" selected="selected">Resolved</option>
+					                		<option value="dublicate">Dublicate</option>
+					                		<option value="invalid">Invalid</option>
+					                		<option value="wontfix">Wontfix</option>
+					                		<option value="closed">Closed</option>
+					                	</select>
+					                </td>
+					                
+					            </tr>
+					            <tr>
+									<td>#24</td>
+									<td>
+					                
+					                </td>
+					                <td>
+					                	<div class="btn-group">
+											<a href="#" class="label label-primary dropdown-toggle" data-toggle="dropdown">Normal <span class="caret"></span></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="#"><span class="status-mark position-left bg-danger"></span> Highest priority</a></li>
+												<li><a href="#"><span class="status-mark position-left bg-info"></span> High priority</a></li>
+												<li class="active"><a href="#"><span class="status-mark position-left bg-primary"></span> Normal priority</a></li>
+												<li><a href="#"><span class="status-mark position-left bg-success"></span> Low priority</a></li>
+											</ul>
+										</div>
+				                	</td>
+					                <td>
+					                </td>
+					                <td>
+					                	<select name="status" class="select" data-placeholder="Select status">
+					                		<option value="open">Open</option>
+					                		<option value="hold" selected="selected">On hold</option>
+					                		<option value="resolved">Resolved</option>
+					                		<option value="dublicate">Dublicate</option>
+					                		<option value="invalid">Invalid</option>
+					                		<option value="wontfix">Wontfix</option>
+					                		<option value="closed">Closed</option>
+					                	</select>
+					                </td>
+					                
+									
+					            </tr>
+					            <tr>
+									<td>#23</td>
+									<td>
+					                
+					                </td>
+					                <td>
+					                	<div class="btn-group">
+											<a href="#" class="label label-success dropdown-toggle" data-toggle="dropdown">Low priority <span class="caret"></span></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="#"><span class="status-mark position-left bg-danger"></span> Highest priority</a></li>
+												<li><a href="#"><span class="status-mark position-left bg-info"></span> High priority</a></li>
+												<li class="active"><a href="#"><span class="status-mark position-left bg-primary"></span> Normal priority</a></li>
+												<li><a href="#"><span class="status-mark position-left bg-success"></span> Low priority</a></li>
+											</ul>
+										</div>
+				                	</td>
+					                <td>
+					                </td>
+					                <td>
+					                	<select name="status" class="select" data-placeholder="Select status">
+					                		<option value="open">Open</option>
+					                		<option value="hold" selected="selected">On hold</option>
+					                		<option value="resolved">Resolved</option>
+					                		<option value="dublicate">Dublicate</option>
+					                		<option value="invalid">Invalid</option>
+					                		<option value="wontfix">Wontfix</option>
+					                		<option value="closed">Closed</option>
+					                	</select>
+					                </td>
+					                
+									
+					            </tr>
+					            <tr>
+									<td>#25</td>
+					                <td>
+
+					                </td>
+					                <td>
+					                	<div class="btn-group">
+											<a href="#" class="label label-danger dropdown-toggle" data-toggle="dropdown">Highest <span class="caret"></span></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li class="active"><a href="#"><span class="status-mark position-left bg-danger"></span> Highest priority</a></li>
+												<li><a href="#"><span class="status-mark position-left bg-info"></span> High priority</a></li>
+												<li><a href="#"><span class="status-mark position-left bg-primary"></span> Normal priority</a></li>
+												<li><a href="#"><span class="status-mark position-left bg-success"></span> Low priority</a></li>
+											</ul>
+										</div>
+				                	</td>
+					                <td>
+					                	
+				                	</td>
+					                <td>
+					                	<select name="status" class="select" data-placeholder="Select status">
+					                		<option value="open">Open</option>
+					                		<option value="hold">On hold</option>
+					                		<option value="resolved" selected="selected">Resolved</option>
+					                		<option value="dublicate">Dublicate</option>
+					                		<option value="invalid">Invalid</option>
+					                		<option value="wontfix">Wontfix</option>
+					                		<option value="closed">Closed</option>
+					                	</select>
+					                </td>
+					                
+					            </tr>
+					            <tr>
+									<td>#24</td>
+									<td>
+					                
+					                </td>
+					                <td>
+					                	<div class="btn-group">
+											<a href="#" class="label label-primary dropdown-toggle" data-toggle="dropdown">Normal <span class="caret"></span></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="#"><span class="status-mark position-left bg-danger"></span> Highest priority</a></li>
+												<li><a href="#"><span class="status-mark position-left bg-info"></span> High priority</a></li>
+												<li class="active"><a href="#"><span class="status-mark position-left bg-primary"></span> Normal priority</a></li>
+												<li><a href="#"><span class="status-mark position-left bg-success"></span> Low priority</a></li>
+											</ul>
+										</div>
+				                	</td>
+					                <td>
+					                </td>
+					                <td>
+					                	<select name="status" class="select" data-placeholder="Select status">
+					                		<option value="open">Open</option>
+					                		<option value="hold" selected="selected">On hold</option>
+					                		<option value="resolved">Resolved</option>
+					                		<option value="dublicate">Dublicate</option>
+					                		<option value="invalid">Invalid</option>
+					                		<option value="wontfix">Wontfix</option>
+					                		<option value="closed">Closed</option>
+					                	</select>
+					                </td>
+					                
+									
+					            </tr>
+					            <tr>
+									<td>#23</td>
+									<td>
+					                
+					                </td>
+					                <td>
+					                	<div class="btn-group">
+											<a href="#" class="label label-success dropdown-toggle" data-toggle="dropdown">Low priority <span class="caret"></span></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="#"><span class="status-mark position-left bg-danger"></span> Highest priority</a></li>
+												<li><a href="#"><span class="status-mark position-left bg-info"></span> High priority</a></li>
+												<li class="active"><a href="#"><span class="status-mark position-left bg-primary"></span> Normal priority</a></li>
+												<li><a href="#"><span class="status-mark position-left bg-success"></span> Low priority</a></li>
+											</ul>
+										</div>
+				                	</td>
+					                <td>
+					                </td>
+					                <td>
+					                	<select name="status" class="select" data-placeholder="Select status">
+					                		<option value="open">Open</option>
+					                		<option value="hold" selected="selected">On hold</option>
+					                		<option value="resolved">Resolved</option>
+					                		<option value="dublicate">Dublicate</option>
+					                		<option value="invalid">Invalid</option>
+					                		<option value="wontfix">Wontfix</option>
+					                		<option value="closed">Closed</option>
+					                	</select>
+					                </td>
+					                
+									
+					            </tr>
+					            
+							</tbody>
+						</table>
+					</div>
+					<!-- /task manager table -->
+
+	</div>
+</div>

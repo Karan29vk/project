@@ -1,0 +1,68 @@
+<%= content_for :header do %>
+	People &amp; Organization - Organization List
+<% end %>
+<%= content_for :Listheader do %>
+	<li><a href="#">People &amp; Organization</a></li>
+	<li class="active">Organization List</li>
+<% end %>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<span class="my-heading">List of Organizations</span>
+		<%= link_to '' , add_organization_path , class: "icon-plus2 pull-right" %>
+	</div>
+	<div class="panel-body">
+		<div class="form-group">
+			<div class="table-responsive">
+				<table class="table datatable-basic">
+					<thead class="bg-primary">
+						<tr>
+							<th></th>
+							<th>Name</th>
+							<th><i class="fa fa-envelope"></i> E-Mail</th>
+							<th><i class="icon-phone"></i> Contect Number</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<%= image_tag("/cspl_logo.png" , class: "listpic-small listpic") %>
+							</td>
+							<td><%= link_to 'Complitech PVT LTD' , oraganization_profile_path %></td>
+							<td><a>www.complitech.us</a></td>
+							<td>079 3017 7566</td>
+							<td><%= link_to '' , add_opportunity_path , class: "glyphicon glyphicon-pencil" %></td>
+						</tr>
+						<tr>
+							<td>
+								<%= image_tag("/sslogo.png" , class: "listpic-small listpic") %>
+							</td>
+							<td>Steady Steps</td>
+							<td><a>www.steadysteps.in</a></td>
+							<td>756 746 7777</td>
+							<td><%= link_to '' , add_opportunity_path , class: "glyphicon glyphicon-pencil" %></td>
+						</tr>
+						<tr>
+							<td>
+								<%= image_tag("/netSqure.png" , class: "listpic-small listpic") %>
+							</td>
+							<td>Net Squre Solutions</td>
+							<td><a>www.net-square.com</a></td>
+							<td>079 2665 0090</td>
+							<td><%= link_to '' , add_opportunity_path , class: "glyphicon glyphicon-pencil" %></td>
+						</tr>
+						<tr>
+							<td>
+								<%= image_tag("/indianic_logo.png" , class: "listpic-small listpic") %>
+							</td>
+							<td>indianic</td>
+							<td><a>www.indianic.com</a></td>
+							<td>+1 408-922-9083</td>
+							<td><%= link_to '' , add_opportunity_path , class: "glyphicon glyphicon-pencil" %></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

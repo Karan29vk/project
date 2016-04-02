@@ -1,0 +1,212 @@
+<%= content_for :header do %>
+	People &amp; Organization - Organization List - Organization Profile
+<% end %>
+<%= content_for :Listheader do %>
+	<li><a href="#">People &amp; Organization</a></li>
+	<li><a href="list_organization">Organization List</a></li>
+	<li class="active">Organization Profile</li>
+<% end %>
+<div class="panel panel-flat">
+	<div class="panel-heading my-heading">
+		<span>Oraganization Profile</span>
+		<div class="heading-elements">
+			<ul class="icons-list">
+        		<li><a data-action="collapse"></a></li>
+        		<li><a data-action="reload"></a></li>
+        		<li><a data-action="close"></a></li>
+        	</ul>
+    	</div>
+	</div>
+	<div class="panel-body">
+		<div class="content">
+			<div class="form-group">
+				<div class="row">
+					<div class="col-lg-3 col-md-3">
+						<div class="media">
+				            <div class="media-left-pro">
+				            	<%= link_to (image_tag('/cspl_logo.png')) , nil%>
+				            </div>
+				        </div>
+				    </div>
+				    <div class="col-lg-1 col-md-1"></div>
+				    <div class="col-lg-8 col-md-8">
+				    	<big><span class="text-blue">Complitech Sloution PVT ltd.</span>
+		                	<small class="display-block">303, Sarvopari Mall, Near Bhuyangdev Cross Roads, Sola Road, Ahmedabad, Gujarat 380061<p> Phone: 079 3017 7566</p></small>
+		                </big>
+				    </div>
+				</div>
+			</div>
+	    </div>
+	</div>
+</div>
+<div class="panel panel-flat">
+	<div class="panel-heading">
+		<div class="content">
+			<legend>
+			<ul class="nav nav-pills nav-justified my-tag">
+				<li><a href="#basic-tab1" data-toggle="tab"> People </a></li>
+				<li><a href="#basic-tab2" data-toggle="tab">Notes</a></li>
+				<li class="active"><a href="#basic-tab3" data-toggle="tab">Opportunities&nbsp;<span class="bg-orange badge">3</span></span></a> </li>
+				<li><a href="#basic-tab4" data-toggle="tab">Cases&nbsp;<span class="bg-green badge">1</span></a> </li>
+			</ul>
+			</legend>
+		</div>
+	</div>
+	<div class="panel-body">
+		<div class="tab-content">
+			<div class="tab-pane" id="basic-tab1">
+				<legend>Peopel at Complitech</legend>
+				<div class="table-responsive">
+					<table class="table-condensed">
+					    <tbody>
+					      <tr>
+					        <td><%= image_tag("/avatar-st.png" , class: "logo") %></td>
+					        <td> Darshil Shah <p><span class="text-muted">Business Developer</span></p></td>
+					      </tr>
+					      <tr>
+					        <td><%= image_tag("/avatar-st.png" , class: "logo") %></td>
+					        <td> Shraddha Pandey <p><span class="text-muted"> HR </span> </p></td>
+					      </tr>
+					      <tr>
+					        <td><%= image_tag("/avatar-st.png" , class: "logo") %></td>
+					        <td> Shraddha Pandey <p><span class="text-muted"> HR </span> </p></td>
+					      </tr>
+					    </tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="tab-pane" id="basic-tab2">
+				<div class="form-group">
+					<div class="row">
+						<%= link_to 'Add Note' , "#modal_form_vertical" , class:"text-blue btn btn-default pull-right" , "data-toggle" => "modal" %>
+							<div id="modal_form_vertical" class="modal fade">
+								<%= render 'add_note_popup' %>
+							</div>
+					</div>
+					<div class="content">
+						<div class="panel-heading">
+							<i class="text-muted icon-file-plus"></i>
+							<span class="text-muted">Note by TGK</span>
+							<div class="heading-elements">
+								<ul class="icons-list">
+			                		<li class="dropdown">
+			                			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i> <span class="caret"></span></a>
+										<ul class="dropdown-menu dropdown-menu-right">
+											<li>
+												<a href="#modal_form_vertical" data-toggle= "modal">
+													<div id="modal_form_vertical" class="modal fade">
+														<%= render 'add_note_popup' %>
+													</div>Edit</a>
+											</li>
+											<li><a href="#">Delete</a></li>
+										</ul>
+			                		</li>
+			                	</ul>
+	        				</div>
+		        		</div>
+		        		<div class="panel-body">
+							<big>This is it.<p> ANd yes was right.</p></big>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="tab-pane active" id="basic-tab3">
+				<div class="form-group">
+					<div class="row">
+						<%= link_to 'Add Opportunity' , add_opportunity_path , class:"text-blue btn btn-default pull-right" , "data-toggle" => "modal" %>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+									<th>Opportunity</th>
+									<th>Milestone</th>
+									<th>Value</th>
+									<th>Owner</th>
+									<th>Expacted Close Date</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td><%= link_to 'Business Management System' , opportunity_details_path %></td>
+										
+										<td>
+											<span class="text-bold">Bid(50%)</span>
+											<div class="progress progress-xxs">
+												<div class="progress-bar progress-bar-info" style="width: 50%">
+												</div>
+											</div>
+										</td>
+										<td>250000</td>
+										<td>Karan Vyas</td>
+										<td>10/05/2016</td>
+									</tr>
+									<tr>
+										<td><%= link_to 'Stadium' , opportunity_details_path %></td>
+										<td>
+											<span class="text-bold">Negotiation(80%)</span>
+											<div class="progress progress-xxs">
+												<div class="progress-bar progress-bar-info" style="width: 80%">
+												</div>
+											</div>
+										</td>
+										<td>150000</td>
+										<td>Karan Vyas</td>
+										<td>15/04/2016</td>
+									</tr>
+									<tr>
+										<td><%= link_to 'Doctortv' , opportunity_details_path %></td>
+										<td>
+											<span class="text-bold">Analisys(25%)</span>
+											<div class="progress progress-xxs">
+												<div class="progress-bar progress-bar-info" style="width: 25%">
+												</div>
+											</div>
+										</td>
+										<td>264000</td>
+										<td>Karan Vyas</td>
+										<td>14/07/2016</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab-pane" id="basic-tab4">
+				<div class="form-group">
+					<div class="row">
+						<%= link_to 'Add Case' , add_case_path , class: "text-blue pull-right btn btn-default" %>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+									<th>Case Name</th>
+									<th>Status</th>
+									<th>Close Date</th>
+									<th>Assign To</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td><%= link_to 'Desing Mockups' , case_details_path %></td>
+										<td><label class="bg-success-800">&nbsp;Open&nbsp;</td>
+										<td></td>
+										<td>Karan Vyas</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

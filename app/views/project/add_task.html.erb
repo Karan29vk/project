@@ -1,0 +1,122 @@
+<%= content_for :header do %>
+	Calender &amp; Task - Add Task
+<% end %>
+<%= content_for :Listheader do %>
+	<li class="calender_and_task">Calender &amp; Task</li>
+	<li class="active">Add Task</li>
+<% end %>
+<%= content_for :Listheader do %>
+	<li><a href="calender_and_task">Calender &amp; Task</a></li>
+	<li class="active">Add Task</li>
+<% end %>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<span class="my-heading">Add Task</span>
+		<%= link_to ' ' , all_task_path , class: "glyphicon glyphicon-arrow-left pull-right" %>
+	</div>
+	<%= form_tag({:controller => "project", :action => "all_task"}, :class=> "form-horizontal form-validate-jquery" )do %>
+		<div class="panel-body">
+	
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-8">
+						<label>Subject</label>
+						<%= text_field_tag 'Subject' , nil  , placeholder: "Task Subject", class: "form-control" , :required => true %>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-8">
+						<label>Details</label>
+						<%= text_area_tag 'Task_Details' , nil  , placeholder: "Task Details", class: "form-control", :required => true %>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-6">
+						<label> Date </label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="icon-calendar5"></i></span>
+							<%= text_field_tag 'date' , nil , class: "form-control pickadate" %>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<label>Time</label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="icon-alarm"></i></span>
+							<%= text_field_tag 'time' , nil , class: "form-control pickatime" %>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-8">
+						<label>Category</label>
+
+						<select data-placeholder="Select a Category" class="select" required= true>
+						<option>
+							<optgroup label="Category">
+								<option value="1">EMail</option>
+								<option value="2">Call</option>
+								<option value="3">Meeting</option>
+								<option value="4">follow-up</option>
+							</optgroup>
+						</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-8">
+						<label>Assign to</label>
+						<select data-placeholder="Select a Employee" class="select" required = true>
+							<option>
+								<optgroup label="Employee">
+									<option value="1">Karan Vyas</option>
+									<option value="2">Ronak Mehta</option>
+									<option value="3">Nilesh Lagdhir</option>
+									<option value="4">Jayesh Rajyaguru</option>
+								</optgroup>
+							</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-8">
+						<label>Priority</label>
+						<select data-placeholder="Select a Priority" class="select" required = true>
+							<option>
+								<optgroup label="Priority">
+									<option value="1">Higher</option>
+									<option value="2">High</option>
+									<option value="3">Middle</option>
+									<option value="4">Low</option>
+									<option value="5">Lowest</option>
+								</optgroup>
+							</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+
+				<%= button_to 'Save Task' , all_task_path , class: "btn btn-primary pull-left" %>
+				<%= link_to 'Cancle' , all_task_path , class: "btn btn-link pull-left" %>
+				
+				<%#= link_to 'Delete Task' , all_task_path , class: "btn btn-danger pull-right" %>
+				<%#= link_to 'Update Task' , all_task_path , class: "btn btn-warning pull-right" %>
+			</div>
+
+		</div>
+	<% end %>
+</div>

@@ -1,0 +1,163 @@
+<%= content_for :header do %>
+  Sales Pipeline
+<% end %>
+<%= content_for :Listheader do %>
+    <li class="active">Sales Pipeline</li>
+<% end %>
+
+<div class="panel">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <legend>Conversion Rate
+                     <span class="pull-right">
+                          <%= link_to 'Go to Close opportunity' , close_opportunity_path %>
+                          <span class="icon-arrow-right22 text-blue"></span>
+                     </span>
+                </legend>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="text-center text-blue">
+                            <th>Last 30 Days</th>
+                            <th>Last 60 Days</th>
+                            <th>Last 90 Days</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="text-center">
+                                     <div class="circle" id="circles-1"></div>
+                                     </span>
+                                </td>
+                                <td><span class="text-center">
+                                     <div class="circle" id="circles-2"></div>
+                                     </span>
+                                </td>
+                                <td><span class="text-center">
+                                     <div class="circle" id="circles-3"></div>
+                                     </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear-fix"><br/></div>
+
+
+<div class="row">
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <legend>PipeLine Forcast
+                     <span class="pull-right">
+                          <%= link_to 'Go to open opportunity' , list_opportunity_path %>
+                          <span class="icon-arrow-right22 text-blue"></span>
+                     </span>
+                </legend>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                     <table class="table">
+                          <div id="opportunity-bar"></div>
+                     </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <legend>
+                    <span>Forcast by Milestone
+                    <%= link_to 'Export as image' , nil , class: "pull-right" %></span>
+                </legend>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                     <table class="table">
+                          <div id="milestone-bar"></div>
+                     </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<script type="text/javascript">
+Morris.Bar({
+  element: 'opportunity-bar',
+  data: [
+    { y: 'apr', a: 325000},
+    { y: 'may', a: 600000},
+    { y: 'jun', a: 150000},
+    { y: 'jul', a: 412000},
+    { y: 'aug', a: 0},
+    { y: 'sep', a: 175000}
+  ],
+  xkey: 'y',
+  ykeys: ['a'],
+  labels: [' '],
+});
+Morris.Bar({
+  element: 'milestone-bar',
+  data: [
+    { y: 'New', a: 5},
+    { y: 'Bid', a: 2},
+    { y: 'Analisys', a: 3},
+    { y: 'Design', a: 1},
+    { y: 'Negoiation', a: 2},
+  ],
+  xkey: 'y',
+  ykeys: ['a'],
+  labels: [' '],
+  barColors: function (row, series, type) {
+    if(row.label == "Analisys") return "#00695C";
+    else if(row.label == "New") return "#558B2F";
+    else if(row.label == "Bid") return "#0277BD";
+    else if(row.label == "Design") return "#800080";
+    else if(row.label == "Negoiation") return "#FFA500";
+    }
+});
+
+var myCircle = Circles.create({
+  id:                  'circles-1',
+  radius:              60,
+  value:               67,
+  maxValue:            100,
+  width:               10,
+  text:                function(value){return value + '%';},
+  colors:              ['#BDBDBD', '#04B4AE'],
+  duration:            400,
+  // wrpClass:            'circles-wrp',
+  // textClass:           'circles-text',
+  // valueStrokeClass:    'circles-valueStroke',
+  // maxValueStrokeClass: 'circles-maxValueStroke',
+  // styleWrapper:        true,
+  // styleText:           true
+});
+var myCircle1 = Circles.create({
+  id:                  'circles-2',
+  radius:              60,
+  value:               67,
+  maxValue:            100,
+  width:               10,
+  text:                function(value){return value + '%';},
+  colors:              ['#BDBDBD', '#04B4AE'],
+  duration:            400
+  });
+var myCircle2 = Circles.create({
+  id:                  'circles-3',
+  radius:              60,
+  value:               67,
+  maxValue:            100,
+  width:               10,
+  text:                function(value){return value + '%';},
+  colors:              ['#BDBDBD', '#04B4AE'],
+  duration:            400
+  });
+</script>

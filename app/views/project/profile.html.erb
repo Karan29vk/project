@@ -1,0 +1,252 @@
+<div class="row">
+	<div class="col-lg-12">
+		<div class="thumbnail">
+			
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="thumb thumb-rounded thumb-slide img-lg">
+						<%= image_tag 'placeholder.jpg' %>
+						<div class="caption">
+							<span>
+								<a data-popup="lightbox" class="btn bg-success-800 btn-icon btn-xs" href="#"><i class="icon-plus2"></i></a>
+							</span>
+						</div>
+					</div>
+				
+			    	<div class="caption text-center">
+			    		<h6 class="text-semibold no-margin"><small class="display-block">RoR Developer</small></h6>
+						<ul class="icons-list mt-15">
+
+			            	<li><a title="Google Drive" data-popup="tooltip" href="#" data-original-title="Google Drive"><i class="icon-google-drive"></i></a></li>
+			            	<li><a data-popup="tooltip" href="#" title="Twitter"><i class="icon-twitter"></i></a></li>
+			            	<li><a data-popup="tooltip" href="#" title="Github"><i class="icon-github"></i></a></li>
+			            	<li><a data-popup="tooltip" href="#" title="Facebook"><i class="icon-facebook"></i></a></li>
+			        	</ul>
+			    	</div>
+			    </div>
+
+				<div class="col-lg-9">
+					<div class="row">
+						<div class="col-lg-9 text-center">
+							<h3 class="text-semibold"> Name : Krishna J. Mehta </h3>
+						</div>
+					</div>
+					<p/>
+					<div class="row">
+						<div class="col-lg-6">
+							<i class="icon-phone2"></i>
+								<medium> Contect Number : +91 9988262645  </medium>
+						</div>
+						<div class="col-lg-6">
+							<i class="icon-mail5"></i>
+							<label> Email : </label>
+							<label> krishna@complitech.net </label>
+						</div>
+					</div>
+					<p/>
+					<div class="row">
+						<div class="col-lg-6">
+							<i class="fa fa-birthday-cake"></i> 
+							<label> Date of Birth : </label>
+							<label> 09-11-1993 </label>
+						</div>
+						
+						<div class="col-lg-6">
+							<i class="fa fa-birthday-cake"></i> 
+							<label> Date Of Join : </label>
+							<label> 21-12-2015 </label>
+						</div>
+					</div>
+					<p/>
+					<div class="row">
+						<div class="col-lg-12">
+							<label> Status </label>
+							<big class="badge bg-blue text-bold"> Active </big>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="panel">
+	<ul class="nav nav-tabs nav-justified">
+		<li class="active"><a href="#basic-tab1" data-toggle="tab">
+			<span class="text-slate-800">Task</span></a></li>
+		<li><a href="#basic-tab2" data-toggle="tab">
+				<span class="text-slate-800">Opportunities</span>
+				<span class="badge bg-primary-800"><span class="text-black">2</sapn> </span>
+			</a>
+		</li>
+		<li><a href="#basic-tab3" data-toggle="tab">
+			<span class="text-slate-800">Cases</span>
+			<span class="badge bg-brown"><span class="text-black">1</sapn></sapn>
+		</li>
+	</ul>
+
+<div class="panel">
+	<div class="tab-content">
+		<div class="tab-pane active" id="basic-tab1">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel-default">
+						<div class="panel-heading">
+							<span>Active Task</span>
+						</div>
+						<div class="panel-body">
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+										<tr class="success">
+											<th>#Task Number</th>
+											<th>Task Description</th>
+											<th>Time</th>
+											<th class="text-center">Actions</th>
+											<th class="text-center"><i class="fa fa-check-square"></i> Status</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>#1</td>
+											<td>
+												<%= link_to 'Call' , nil  %>
+												<p>HR Complitech PVT LTD.</p>
+											</td>
+											<td><i class="fa fa-clock-o"></i> 10:00 AM</td>
+											<td>
+												<select class="select select2-hidden-accessible">
+						                            <option>Select</option>
+						                            <option value="open">Open</option>
+						                            <option value="hold">Hold</option>
+						                            <option value="canceled">Cancled</option>
+						                            <option value="waiting for Approval">Waiting for Approval</option>
+						                        </select>
+											</td>
+											<td class="text-center">
+												<%= check_box("post", "validated") %>
+											</td>
+										</tr>
+										<tr>
+											<td>#2</td>
+											<td>
+												<%= link_to 'Meeting' , nil  %>
+												<p>Hospital Management</p>
+											</td>
+											<td><i class="fa fa-clock-o"></i> 1:00 PM</td>
+											<td>
+												<select class="select select2-hidden-accessible">
+						                            <option>Select</option>
+						                            <option value="open">Open</option>
+						                            <option value="hold">Hold</option>
+						                            <option value="canceled">Cancled</option>
+						                            <option value="waiting for Approval">Waiting for Approval</option>
+						                        </select>
+											</td>
+											<td class="text-center">
+												<%= check_box("post", "validated") %>
+											</td>
+										</tr>
+										<tr>
+											<td>#3</td>
+											<td>
+												<%= link_to 'Follow-up' , nil  %>
+												<p>Issue about the working function of the Mobi-print </p>
+											</td>
+											<td><i class="fa fa-clock-o"></i> 3:00 PM</td>
+											<td>
+												<select class="select select2-hidden-accessible">
+						                            <option>Select</option>
+						                            <option value="open">Open</option>
+						                            <option value="hold">Hold</option>
+						                            <option value="canceled">Cancled</option>
+						                            <option value="waiting for Approval">Waiting for Approval</option>
+						                        </select>
+											</td>
+											<td class="text-center">
+												<%= check_box("post", "validated") %>
+											</td>
+										</tr>
+										<tr>
+											<td>#4</td>
+											<td>
+												<%= link_to 'Meeting' , nil  %>
+												<p>BMS team members</p>
+											</td>
+											<td><i class="fa fa-clock-o"></i> 5:00 PM</td>
+											<td>
+												<select class="select select2-hidden-accessible">
+						                            <option>Select</option>
+						                            <option value="open">Open</option>
+						                            <option value="hold">Hold</option>
+						                            <option value="canceled">Cancled</option>
+						                            <option value="waiting for Approval">Waiting for Approval</option>
+						                        </select>
+											</td>
+											<td class="text-center">
+												<%= check_box("post", "validated") %>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane" id="basic-tab2">
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table class="table datatable-basic">
+						<thead class="bg-blue">
+							<th>Name</th>
+							<th>Expacted Value</th>
+							<th>Expacted Colse Date</th>
+							<th>Relates to</th>
+							<th>Status</th>
+							
+						</thead>
+						<tbody>
+							<tr>
+								<td><%= link_to 'BMS' , opportunity_details_path %></td>
+								<td>50000</td>
+								<td>15/04/2016</td>
+								<td>Krishna Mehta</td>
+								<td><label class="label bg-blue">Bid</td>
+							</tr>
+							<tr>
+								<td>BMS</td>
+								<td>50000</td>
+								<td>15/04/2016</td>
+								<td>Krishna Mehta</td>
+								<td><label class="label bg-orange">Negotiation</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane" id="basic-tab3">
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<th>Case</th>
+							<th>Status</th>
+							<th>Close Date</th>
+							<th>Assined to</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Project Dealing</td>
+								<td><lable class="lable bg-success-800">&nbsp;Open&nbsp;</label></td>
+								<td></td>
+								<td>Krishna Mehta</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

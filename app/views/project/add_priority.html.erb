@@ -1,0 +1,42 @@
+<%= content_for :header do %>
+	Setting - List Priority - Add Priority
+<% end %>
+<%= content_for :Listheader do %>
+	<li><a href="#">Setting</a></li>
+	<li><a href="list_priority">List Priority</a></li>
+	<li class="active">Add Priority</li>
+<% end %>
+<div class="row">
+	<div class="col-xs-3">
+		<%= render 'all_setting' %>
+	</div>
+	<div class="col-xs-9">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<span class="my-heading">Priority</span>
+				<%=link_to 'Listing page' , list_priority_path , class:" icon-arrow-left15 pull-right"%>
+			</div>
+
+
+		     <%= form_tag({:controller => "project", :action => "list_priority"}, :class=> "form-horizontal form-validate-jquery" )do %>
+				<div class="panel-body">
+					<div class="form-group">
+						<div class="row">
+							<div class="col-lg-8 col-md-8">
+								<label>Priority Name </label>
+								<%= text_field_tag 'priorityName' , nil  , class: "form-control" , autofocus: true , :required => true %>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-lg-8 col-md-8">
+								<%= submit_tag "Save" , class: "btn btn-primary"  %>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

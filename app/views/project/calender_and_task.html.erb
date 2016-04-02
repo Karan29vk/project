@@ -1,0 +1,613 @@
+<%= content_for :header do %>
+	Calendar and Task
+<% end %>
+<%= content_for :Listheader do %>
+	<li class="active">Calender &amp; Task</li>
+<% end %>
+<div class="panel panel-flat">
+<ul class="nav nav-tabs nav-justified">
+	<li class="active"><a href="#basic-tab1" data-toggle="tab">
+		<span class="text-primary">Calender</span></a></li>
+	<li><a href="#basic-tab2" data-toggle="tab">
+		<span class="text-primary">Task</span></a></li>
+</ul>
+</div>
+<div class="tab-content">
+	<div class="tab-pane active" id="basic-tab1">
+		<div class="panel panel-flat">
+			<div class="panel-heading">
+				<h5 class="panel-title">Calendar View</h5>
+				<div class="heading-elements">
+					<ul class="icons-list">
+		        		<li><a data-action="collapse"></a></li>
+		        		<li><a data-action="reload"></a></li>
+		        		<li><a data-action="close"></a></li>
+		        	</ul>
+		    	</div>
+			</div>
+			
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-lg-8 col-md-8">
+						<div class="button">
+							<%= link_to 'Add Task' , add_task_path , class: "btn btn-success" %>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4">
+						<div class="row">
+							<div class="col-lg-4 col-md-4">
+								<p></p>
+								<span> Task Related to </span>
+							</div>
+							<div class="col-lg-8 col-md-8">
+								<select class="select pull-right">
+									<option>Anyone</option>
+									<option>Me</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p class="content-group"></p>
+
+				<div class="fullcalendar-basic"></div>
+			</div>
+		</div>
+	</div>
+	<div class="tab-pane" id="basic-tab2">
+		<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h6 class="text-semibold">Task Listing
+				<%= link_to '' , add_task_path , class: "icon-plus2 pull-right"  %></h6>
+			</div>
+			<div class="panel-body">
+				<div class="table-responsive">
+					<div class="row">
+						<div class="col-lg-5 col-md-5">
+							<div class="row">
+								<div class="col-lg-2 col-md-2">
+									<p></p>
+									<label>Filter by: </label>
+								</div>
+								<div class="col-lg-7 col-md-7">
+									<select id="taskselect" class="select" data-placeholder="Select Task">
+										<option>
+											<optgroup label="Task Group">
+												<option value="all">All</option>
+												<option value="open">Open</option>
+												<option value="close">Close</option>
+											</optgroup>
+										</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-7 col-md-7">
+							<%= button_tag 'My Tasks' , class: "btn btn-danger pull-right" , id: "myTask" %>
+						</div>
+					</div>
+					<div class="clearfix"><br/></div>
+					<div id="all">
+						<table class="table datatable-basic">
+							<thead>
+								<tr class="bg-blue">
+									<th>Subject</th>
+									<th>Assign to</th>
+									<th><i class="icon-calendar3"></i> Due Date &amp; Time</th>
+									<th>Priority</th>
+									<th>Status</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<%= link_to 'Max TCHEK Amount is not consistent with client profile' , nil  %>
+									</td>
+									<td><%= link_to 'Mayur Shah' , nil  %></td>
+									<td >17/04/2016</td>
+									<td><label class="bg-orange">&nbsp;Medium&nbsp;</label></td>
+									<td>Open</td>
+									<td><%= link_to '' ,add_task_path , class: "icon-pencil" %></td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'Bar code and Qr code scanning is not working properly' , nil  %>
+									</td>
+									
+									<td>
+										<a>Karan Vyas</a>
+									</td>
+									<td><%= Date.today() %> 10:00 AM <i class="fa fa-clock-o"></i></td>
+									<td><label class="bg-danger">&nbsp;High&nbsp;</label></td>
+									<td>On hold</td>
+									<td>
+										<%= link_to '' , "#task_details" , "data-toggle" => "modal" , class: "icon-pencil" %>
+										<div id="task_details" class="modal fade">
+											<%= render 'details_task_popup' %>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'Follow-up for new project' , nil  %>
+									</td>
+									<td><a>Karan Vyas</a></td>
+									<td><%= Date.today() %></td>
+									<td><label class="bg-green">&nbsp;Low&nbsp;</label></td>
+									<td>Waiting for Approval</td>
+									<td>
+										<%= link_to '' , "#task_details" , "data-toggle" => "modal" , class: "icon-pencil" %>
+										<div id="task_details" class="modal fade">
+											<%= render 'details_task_popup' %>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'Feedback from latest client call - 26 March' , nil  %>
+									</td>
+									<td><%= link_to 'Karan Vyas' , nil  %></td>
+									<td><%= Date.today() %> 1:00 PM <i class="fa fa-clock-o"></i></td>
+									<td><label class="bg-orange">&nbsp;Medium&nbsp;</label></td>
+									<td>On hold</td>
+									<td>
+										<%= link_to '' , "#task_details" , "data-toggle" => "modal" , class: "icon-pencil" %>
+										<div id="task_details" class="modal fade">
+											<%= render 'details_task_popup' %>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'Timing was not display in correct level' , nil  %>
+									</td>
+									<td>
+										<a>Karan Vyas</a>
+									</td>
+									<td><%= Date.today() %> 3:00 PM <i class="fa fa-clock-o"></i> </td>
+									<td><label class="bg-danger">&nbsp;High&nbsp;</label></td>
+									<td>Waiting for Approval</td>
+									<td>
+										<%= link_to '' , "#task_details" , "data-toggle" => "modal" , class: "icon-pencil" %>
+										<div id="task_details" class="modal fade">
+											<%= render 'details_task_popup' %>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'Amount is not display in correct format' , "#task_details" , "data-toggle" => "modal" %>
+										<div id="task_details" class="modal fade">
+											<%= render 'details_task_popup' %>
+										</div>
+									</td>
+									<td>
+										<a>Karan Vyas</a>
+									</td>
+									<td><%= Date.today() %> 5:00 PM <i class="fa fa-clock-o"></i></td>
+									<td><label class="bg-orange">&nbsp;Medium&nbsp;</label></td>
+									<td>On hold</td>
+									<td>
+										<%= link_to '' , "#task_details" , "data-toggle" => "modal" , class: "icon-pencil" %>
+										<div id="task_details" class="modal fade">
+											<%= render 'details_task_popup' %>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'Mobile Responsive Web App integration' , nil  %>
+									</td>
+									<td><%= link_to 'Nimit Bagadiya' , nil  %></td>
+									<td>19/04/2016 1:00 PM <i class="fa fa-clock-o"></i></td>
+									<td><label class="bg-green">&nbsp;Low&nbsp;</label></td>
+									<td>On hold</td>
+									<td><%= link_to '' ,add_task_path , class: "icon-pencil" %></td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'Photos on Web APP are still rotating each time they are submitted.' , nil  %>
+									</td>
+									<td><%= link_to 'Krishna Mehta' , nil  %></td>
+									<td>21/04/2016 3:00 PM <i class="fa fa-clock-o"></i> </td>
+									<td><label class="bg-danger">&nbsp;High&nbsp;</label></td>
+									<td>Waiting for Approval</td>
+									<td><%= link_to '' ,add_task_path , class: "icon-pencil" %></td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'Sometimes Send request functionality is not working' , nil  %>
+									</td>
+									<td><%= link_to 'Sanjay Vinzuda' , nil  %></td>
+									<td>25/04/2016 5:00 PM <i class="fa fa-clock-o"></i></td>
+									<td><label class="bg-danger">&nbsp;High&nbsp;</label></td>
+									<td>Open</td>
+									<td><%= link_to '' ,add_task_path , class: "icon-pencil" %></td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'RoR documentation' , nil  %>
+									</td>
+									
+									<td>
+										<a>Sanjay Vinzuda</a>
+									</td>
+									<td><%= Date.today() %> 10:00 AM <i class="fa fa-clock-o"></i></td>
+									<td><label class="bg-danger-800">&nbsp;Highest&nbsp;</label></td>
+									<td>Open</td>
+									<td>
+										<%= link_to '' , "#task_details" , "data-toggle" => "modal" , class: "icon-pencil" %>
+										<div id="task_details" class="modal fade">
+											<%= render 'details_task_popup' %>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'Follow-up for new project' , nil  %>
+									</td>
+									<td><%= link_to 'Mayur Shah' , nil  %></td>
+									<td><%= Date.today() %></td>
+									<td><label class="bg-danger-800">&nbsp;Highest&nbsp;</label></td>
+									<td>On hold</td>
+									<td>
+										<%= link_to '' , "#task_details" , "data-toggle" => "modal" , class: "icon-pencil" %>
+										<div id="task_details" class="modal fade">
+											<%= render 'details_task_popup' %>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'iOS desing moke ups' , nil  %>
+									</td>
+									<td><%= link_to 'Nimit Bagadiya' , nil  %></td>
+									<td><%= Date.today() %> 1:00 PM <i class="fa fa-clock-o"></i></td>
+									<td><label class="bg-danger-800">&nbsp;Highest&nbsp;</label></td>
+									<td>On hold</td>
+									<td>
+										<%= link_to '' , "#task_details" , "data-toggle" => "modal" , class: "icon-pencil" %>
+										<div id="task_details" class="modal fade">
+											<%= render 'details_task_popup' %>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'Dashboard Desing' , nil  %>
+									</td>
+									<td>
+										<a>
+										Krishna Mehta</a>
+									</td>
+									<td><%= Date.today() %> 3:00 PM <i class="fa fa-clock-o"></i> </td>
+									<td><label class="bg-danger-800">&nbsp;Highest&nbsp;</label></td>
+									<td>Waiting for Approval</td>
+									<td>
+										<%= link_to '' , "#task_details" , "data-toggle" => "modal" , class: "icon-pencil" %>
+										<div id="task_details" class="modal fade">
+											<%= render 'details_task_popup' %>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'Add points on Get a box & Gift a box' , "#task_details" , "data-toggle" => "modal" %>
+										<div id="task_details" class="modal fade">
+											<%= render 'details_task_popup' %>
+										</div>
+									</td>
+									<td>
+										<a href="#" , data-toggle =  "popover" , data-trigger="hover" , data-content= '<%= render 'employee_info' %>'>Karan Vyas</a>
+									</td>
+									<td><%= Date.today() %> 5:00 PM <i class="fa fa-clock-o"></i></td>
+									<td><label class="bg-danger-800">&nbsp;Highest&nbsp;</label></td>
+									<td>On hold</td>
+									<td>
+										<%= link_to '' , "#task_details" , "data-toggle" => "modal" , class: "icon-pencil" %>
+										<div id="task_details" class="modal fade">
+											<%= render 'details_task_popup' %>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'Not getting any request in admin panel' , nil  %>
+									</td>
+									<td><%= link_to 'Sanjay Vinzuda' , nil  %></td>
+									<td>25/04/2016 5:00 PM <i class="fa fa-clock-o"></i></td>
+									<td><label class="bg-danger">&nbsp;High&nbsp;</label></td>
+									<td>Open</td>
+									<td><%= link_to '' ,add_task_path , class: "icon-pencil" %></td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'Not Getting this pop up in attached screenshot ' , nil  %>
+									</td>
+									<td><%= link_to 'Sanjay Vinzuda' , nil  %></td>
+									<td>19/04/2016 5:00 PM <i class="fa fa-clock-o"></i></td>
+									<td><label class="bg-danger">&nbsp;High&nbsp;</label></td>
+									<td>Open</td>
+									<td><%= link_to '' ,add_task_path , class: "icon-pencil" %></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div id="open">
+						<table class="table datatable-basic">
+							<thead>
+								<tr>
+									<th>Subject</th>
+									<th>Assign to</th>
+									<th><i class="icon-calendar3"></i> Due Date &amp; Time</th>
+									<th>Priority</th>
+									<th>Status</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<%= link_to 'Sometimes Send request functionality is not working' , nil  %>
+									</td>
+									<td><%= link_to 'Sanjay Vinzuda' , nil  %></td>
+									<td>25/04/2016 5:00 PM <i class="fa fa-clock-o"></i></td>
+									<td><label class="bg-danger">&nbsp;High&nbsp;</label></td>
+									<td>Open</td>
+									<td><%= link_to '' ,add_task_path , class: "icon-pencil" %></td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'RoR documentation' , nil  %>
+									</td>
+									
+									<td>
+										<a>Sanjay Vinzuda</a>
+									</td>
+									<td><%= Date.today() %> 10:00 AM <i class="fa fa-clock-o"></i></td>
+									<td><label class="bg-danger-800">&nbsp;Highest&nbsp;</label></td>
+									<td>Open</td>
+									<td>
+										<%= link_to '' , "#task_details" , "data-toggle" => "modal" , class: "icon-pencil" %>
+										<div id="task_details" class="modal fade">
+											<%= render 'details_task_popup' %>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'Not getting any request in admin panel' , nil  %>
+									</td>
+									<td><%= link_to 'Sanjay Vinzuda' , nil  %></td>
+									<td>25/04/2016 5:00 PM <i class="fa fa-clock-o"></i></td>
+									<td><label class="bg-danger">&nbsp;High&nbsp;</label></td>
+									<td>Open</td>
+									<td><%= link_to '' ,add_task_path , class: "icon-pencil" %></td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'Not Getting this pop up in attached screenshot ' , nil  %>
+									</td>
+									<td><%= link_to 'Sanjay Vinzuda' , nil  %></td>
+									<td>19/04/2016 5:00 PM <i class="fa fa-clock-o"></i></td>
+									<td><label class="bg-danger">&nbsp;High&nbsp;</label></td>
+									<td>Open</td>
+									<td><%= link_to '' ,add_task_path , class: "icon-pencil" %></td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'Max TCHEK Amount is not consistent with client profile' , nil  %>
+									</td>
+									<td><%= link_to 'Mayur Shah' , nil  %></td>
+									<td >17/04/2016</td>
+									<td><label class="bg-orange">&nbsp;Medium&nbsp;</label></td>
+									<td>Open</td>
+									<td><%= link_to '' ,add_task_path , class: "icon-pencil" %></td>
+								</tr>
+								
+							</tbody>
+						</table>
+					</div>
+					<div id="close">
+						<table class="table datatable-basic">
+							<thead>
+								<tr class="my-tag">
+									<th>Subject</th>
+									<th>Assign to</th>
+									<th><i class="icon-calendar3"></i> Due Date &amp; Time</th>
+									<th>Priority</th>
+									<th>Status</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<%= link_to 'Provide Email validation in Agent Name screen' , nil  %>
+									</td>
+									<td><%= link_to 'Karan Vyas' , nil  %></td>
+									<td>15/04/2016 10:00 AM <i class="fa fa-clock-o"></i></td>
+									<td><label class="bg-orange">&nbsp;Medium&nbsp;</label></td>
+									<td>Close</td>
+									<td><%= link_to '' ,add_task_path , class: "icon-pencil" %></td>
+								</tr>
+								<tr>
+									<td>
+										<%= link_to 'T-Check reference image change' , nil  %>
+									</td>
+									<td><%= link_to 'Karan Vyas' , nil  %></td>
+									<td>15/04/2016 10:00 AM <i class="fa fa-clock-o"></i></td>
+									<td><label class="bg-orange">&nbsp;Medium&nbsp;</label></td>
+									<td>Close</td>
+									<td><%= link_to '' ,add_task_path , class: "icon-pencil" %></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div id="myTaskgrid">
+						<table class="table datatable-basic">
+							<thead>
+								<tr>
+									<th>Subject</th>
+									<th>Assign to</th>
+									<th><i class="icon-calendar3"></i> Due Date &amp; Time</th>
+									<th>Priority</th>
+									<th>Status</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>
+									<%= link_to 'Bar code and Qr code scanning is not working properly' , nil  %>
+								</td>
+								
+								<td>
+									<a>Karan Vyas</a>
+								</td>
+								<td><%= Date.today() %> 10:00 AM <i class="fa fa-clock-o"></i></td>
+								<td><label class="bg-danger-800">&nbsp;Highest&nbsp;</label></td>
+								<td></td>
+								<td>
+									<%= link_to '' , "#task_details" , "data-toggle" => "modal" , class: "icon-pencil" %>
+									<div id="task_details" class="modal fade">
+										<%= render 'details_task_popup' %>
+									</div>
+								</td>
+							</tr>
+							<tr>
+									<td>
+										<%= link_to 'Add points on Get a box & Gift a box' , "#task_details" , "data-toggle" => "modal" %>
+										<div id="task_details" class="modal fade">
+											<%= render 'details_task_popup' %>
+										</div>
+									</td>
+									<td>
+										<a href="#" , data-toggle =  "popover" , data-trigger="hover" , data-content= '<%= render 'employee_info' %>'>Karan Vyas</a>
+									</td>
+									<td><%= Date.today() %> 5:00 PM <i class="fa fa-clock-o"></i></td>
+									<td><label class="bg-danger-800">&nbsp;Highest&nbsp;</label></td>
+									<td>On hold</td>
+									<td>
+										<%= link_to '' , "#task_details" , "data-toggle" => "modal" , class: "icon-pencil" %>
+										<div id="task_details" class="modal fade">
+											<%= render 'details_task_popup' %>
+										</div>
+									</td>
+							</tr>
+							<tr>
+								<td>
+									<%= link_to 'Follow-up for new project' , nil  %>
+								</td>
+								<td><a>Karan Vyas</a></td>
+								<td><%= Date.today() %></td>
+								<td><label class="bg-green">&nbsp;Low&nbsp;</label></td>
+								<td></td>
+								<td>
+									<%= link_to '' , "#task_details" , "data-toggle" => "modal" , class: "icon-pencil" %>
+									<div id="task_details" class="modal fade">
+										<%= render 'details_task_popup' %>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<%= link_to 'Feedback from latest client call - 26 March' , nil  %>
+								</td>
+								<td><%= link_to 'Karan Vyas' , nil  %></td>
+								<td><%= Date.today() %> 1:00 PM <i class="fa fa-clock-o"></i></td>
+								<td><label class="bg-orange">&nbsp;Medium&nbsp;</label></td>
+								<td></td>
+								<td>
+									<%= link_to '' , "#task_details" , "data-toggle" => "modal" , class: "icon-pencil" %>
+									<div id="task_details" class="modal fade">
+										<%= render 'details_task_popup' %>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<%= link_to 'Timing was not display in correct level' , nil  %>
+								</td>
+								<td>
+									<a>Karan Vyas</a>
+								</td>
+								<td><%= Date.today() %> 3:00 PM <i class="fa fa-clock-o"></i> </td>
+								<td><label class="bg-danger">&nbsp;High&nbsp;</label></td>
+								<td></td>
+								<td>
+									<%= link_to '' , "#task_details" , "data-toggle" => "modal" , class: "icon-pencil" %>
+									<div id="task_details" class="modal fade">
+										<%= render 'details_task_popup' %>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<%= link_to 'Amount is not display in correct format' , "#task_details" , "data-toggle" => "modal" %>
+									<div id="task_details" class="modal fade">
+										<%= render 'details_task_popup' %>
+									</div>
+								</td>
+								<td>
+									<a>Karan Vyas</a>
+								</td>
+								<td><%= Date.today() %> 5:00 PM <i class="fa fa-clock-o"></i></td>
+								<td><label class="bg-orange">&nbsp;Medium&nbsp;</label></td>
+								<td></td>
+								<td>
+									<%= link_to '' , "#task_details" , "data-toggle" => "modal" , class: "icon-pencil" %>
+									<div id="task_details" class="modal fade">
+										<%= render 'details_task_popup' %>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				 </div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$('#open').hide();
+	$('#close').hide();
+	$('#myTaskgrid').hide();
+
+	$('#myTask').on('click', function(){
+		$('#myTaskgrid').show();
+		$('#all').hide();
+		$('#open').hide();
+		$('#close').hide();
+	});
+	
+	$('#taskselect').on('change' , function(){
+		if(this.value == 'all')
+		{
+			$('#all').show();
+			$('#open').hide();
+			$('#close').hide();
+			$('#myTaskgrid').hide();
+		}
+		if(this.value == 'open')
+		{
+			$('#open').show();
+			$('#all').hide();
+			$('#close').hide();
+			$('#myTaskgrid').hide();
+		}
+		if(this.value == 'close')
+		{
+			$('#close').show();
+			$('#open').hide();
+			$('#all').hide();
+			$('#myTaskgrid').hide();
+		}
+		
+	});
+
+</script>
